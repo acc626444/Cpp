@@ -14,6 +14,9 @@ void Deck::print_Deck() {
 		cards[a].print_card();
 	}
 }
+/// <summary>
+/// 
+/// </summary>
 void Deck::shuffle() {
 	for (int a = 0; a < 52; a++) {
 		int i = rand() % 52;
