@@ -1,0 +1,15 @@
+#pragma once
+#include<iostream>
+#include<stdlib.h>
+using namespace std;
+class Card{
+private:
+	int value;
+	string suit;
+public:
+	Card(int v, string s);
+	Card();
+	int get_value();
+	string get_suit();
+	void print_card();
+};
