@@ -12,6 +12,6 @@ int main() {
 	cin >> a;
 	if (a == "yes") {
 		name.print_hand();
-		//add card
+		///add card
 	}
 }
