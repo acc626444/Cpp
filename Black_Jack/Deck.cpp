@@ -1,5 +1,6 @@
 #include "Deck.h"
 Deck::Deck() {
+	c = 0;
 	string suits[4] = { "diamod", "spade", "heart", "club" };
 	int value[13] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 };
 	for (int a = 0; a < 4; a++) {
@@ -14,8 +15,8 @@ void Deck::print_Deck() {
 		cards[a].print_card();
 	}
 }
-
 void Deck::shuffle() {
+	c = 0;
 	for (int a = 0; a < 52; a++) {
 		int i = rand() % 52;
 		Card q;
@@ -23,4 +24,9 @@ void Deck::shuffle() {
 		cards[a] = cards[i];
 		cards[i] = q;
 	}
+}
+Card Deck::draw() {
+	Card a = cards[c];
+	c++;
+	return a;
 }
