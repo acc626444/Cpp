@@ -13,9 +13,28 @@ void card_hands::draw() {
 	in_hand.push_back(from_deck.draw());
 }
 int card_hands::hand_value() {
-	int s=0;
+	int s = 0;
+	int b = 0;
 	for (int a = 0; a < in_hand.size(); a++) {
-		s += in_hand.operator[](a).get_value();
+		if (in_hand.operator[](a).get_value() == 11) {
+			s += 10;
+		}
+		else if (in_hand.operator[](a).get_value() == 12) {
+			s += 10;
+		}
+		else if (in_hand.operator[](a).get_value() == 13) {
+			s += 10;
+		}
+		else if (in_hand.operator[](a).get_value() == 1) {
+			s += 11;
+			b += 1;
+		}
+		else {
+			s += in_hand.operator[](a).get_value();
+		}
+	}
+	if (b > 0 && s > 21) {
+		s -= 10;
 	}
 	return s;
 }
