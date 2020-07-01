@@ -10,4 +10,3 @@ public:
 	void draw();
 	int hand_value();
 };
-

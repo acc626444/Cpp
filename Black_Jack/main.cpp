@@ -19,23 +19,31 @@ int main() {
 			name.draw();
 			
 		}
-		else {
+		else if(a=="stay"){
 			start = false;
 		}
+		else {
+			 cout << "try again" << endl;
+		 }
+	}
+	if (name.hand_value() > 21) {
+		cout << endl;
+		cout << "BUSTED!!!" << endl;
 	}
 	name.print_hand();
 	cout << endl;
 	cout << endl;
 	cout << "dealer" << endl;
 	bool start2 = true;
-	name2.print_hand();
 	while (start2&&name2.hand_value()<21) {
+		name2.print_hand();
 		if (name2.hand_value() < 17) {
+			cout << endl;
+			cout << endl;
 			name2.draw();
 		}
 		else {
 			start2 = false;
 		}
 	}
-
 }
