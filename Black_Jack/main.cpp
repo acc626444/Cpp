@@ -2,15 +2,15 @@
 #include "Deck.h"
 #include "card_hands.h"
 #include <time.h>
-int main() {
+int main() { 
 	srand(time(0));
-	bool start = true;
+	bool start = true;//dtjytd,utrgs
 	Deck d;
 	d.shuffle();
 	card_hands name(&d);
 	card_hands name2(&d);
 	cout << "player 1" << endl;
-	while (start && name.hand_value() < 21) {
+	while (start && name.hand_value() < 21) {//hndtymt
 		name.print_hand();
 		cout << "hit or stay" << endl;
 		string a;
@@ -19,11 +19,11 @@ int main() {
 			name.draw();
 
 		}
-		else if (a == "stay") {
+		else if (a == "stay") {//thtsmytmyut
 			start = false;
 		}
 		else {
-			cout << "try again" << endl;
+			cout << "try again" << endl;//ererre
 		}
 	}
 	if (name.hand_value() > 21) {
