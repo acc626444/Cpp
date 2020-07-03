@@ -2,7 +2,7 @@
 #include "Deck.h"
 #include "card_hands.h"
 #include <time.h>
-int main() { 
+int main() {
 	srand(time(0));
 	bool start = true;//dtjytd,utrgs
 	Deck d;
@@ -54,13 +54,13 @@ int main() {
 		cout << endl;
 		cout << "BUSTED!!!" << endl;
 	}
-	 if (name2.hand_value() == 21) {
+	if (name2.hand_value() == 21) {
 		cout << "BLACK JACK!!" << endl;
 	}
-	 if (name.hand_value()<=21&& name2.hand_value()>21|| name.hand_value() <= 21 && name2.hand_value() > 21) {
+	if (name.hand_value() <= 21 && name2.hand_value() > 21 || name.hand_value() <= 21 && name2.hand_value() > 21) {
 		cout << "player 1 wins!!" << endl;
 	}
-	else if (name2.hand_value() > name.hand_value() || name.hand_value() > 21|| name.hand_value() > 21 && name2.hand_value() > 21) {
+	else if (name2.hand_value() > name.hand_value() || name.hand_value() > 21 || name.hand_value() > 21 && name2.hand_value() > 21) {
 		cout << "Dealer wins!!!" << endl;
 	}
 	else if (name.hand_value() > name2.hand_value()) {
