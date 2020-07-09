@@ -14,5 +14,11 @@ public:
 	void print_list();
 	int remove(int remove);
 	void change(int change, int n1);
+	int Whats_my_size();
+	bool do_i_have(int n);
+	int indexof(int n);
+	int count(int n);
+	Array_List no_more_than_1();
+	Array_List clone();
 };
 

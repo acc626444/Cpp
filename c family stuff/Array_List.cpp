@@ -41,5 +41,49 @@ int Array_List::remove(int remove) {
 }
 void Array_List::change(int change, int n1) {
 	error(change);
-
+	q[change] = n1;
 }
+int Array_List::Whats_my_size() {
+	return size;
+}
+bool Array_List::do_i_have(int n) {
+	for (int a = 0; a < size; a++) {
+		if (q[a] == n) {
+			return true;
+		}
+	}
+	return false;
+}
+int Array_List::indexof(int n) {
+	for (int a = 0; a < size; a++) {
+		if (q[a] == n) {
+			return a;
+		}
+	}
+	return -1;
+}
+int Array_List::count(int n) {
+	int as = 0;
+	for (int a = 0; a < size; a++) {
+		if (q[a] == n) {
+			as++;
+		}
+	}
+	return as;
+}
+Array_List Array_List::no_more_than_1() {
+	Array_List b;
+	b.add()
+
+	return b;
+}
+
+Array_List Array_List::clone() {
+	Array_List b;
+	for (int a = 0; a = size; a++){
+		b.add(a);
+	}
+	return Array_List();
+}
+
+
