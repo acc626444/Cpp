@@ -62,28 +62,30 @@ int Array_List::indexof(int n) {
 	}
 	return -1;
 }
-int Array_List::count(int n) {
-	int as = 0;
-	for (int a = 0; a < size; a++) {
-		if (q[a] == n) {
-			as++;
+int Array_List::count(int v) {
+	int a = 0;
+	for (int as = 0; as < size; as++) {
+		if (q[as] == v) {
+			a++;
 		}
 	}
-	return as;
+	return a;
 }
 Array_List Array_List::no_more_than_1() {
 	Array_List b;
-	b.add()
-
+	for (int a = 0; a < size; a++) {
+		if (count(q[a])==1) {
+			b.add(q[a]);
+		}
+	}
 	return b;
 }
-
 Array_List Array_List::clone() {
 	Array_List b;
-	for (int a = 0; a = size; a++){
-		b.add(a);
+	for (int a = 0; a < size; a++){
+		b.add(q[a]);
 	}
-	return Array_List();
+	return b;
 }
 
 

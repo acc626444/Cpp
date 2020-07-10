@@ -17,7 +17,7 @@ public:
 	int Whats_my_size();
 	bool do_i_have(int n);
 	int indexof(int n);
-	int count(int n);
+	int count(int v);
 	Array_List no_more_than_1();
 	Array_List clone();
 };
