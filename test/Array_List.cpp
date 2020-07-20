@@ -74,7 +74,7 @@ int Array_List::count(int v) {
 Array_List Array_List::no_more_than_1() {
 	Array_List b;
 	for (int a = 0; a < size; a++) {
-		if (b.do_i_have(q[a])==false) {
+		if (b.do_i_have(q[a]) == false) {
 			b.add(q[a]);
 		}
 	}
@@ -82,7 +82,7 @@ Array_List Array_List::no_more_than_1() {
 }
 Array_List Array_List::clone() {
 	Array_List b;
-	for (int a = 0; a < size; a++){
+	for (int a = 0; a < size; a++) {
 		b.add(q[a]);
 	}
 	return b;
