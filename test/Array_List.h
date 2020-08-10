@@ -21,4 +21,3 @@ public:
 	Array_List no_more_than_1();
 	Array_List clone();
 };
-
