@@ -30,6 +30,7 @@ double average (Array_List &b){
 		qe = df;
 	}
 	double as = df / x;
+	cout << as << endl;
 	return as;
 }
 void quite() {
@@ -37,27 +38,29 @@ void quite() {
 	exit(0);
 }
 void start(Array_List& b) {
-	cout << "What do you want to do? add, remove, show score, show average, quite" << endl;
-	string x;
-	cin >> x;
-	if (x == "add") {
-		add_score(b);
-	}
-	else if (x == "remove") {
-		remove_stuff(b);
-	}
-	else if (x == "show score") {
-		show_scores(b);
-	}
-	else if (x == "show average") {
-		average(b);
-	}
-	else if (x == "quite") {
-		quite();
-	}
-	else {
-		cout << "try bagain" << endl;
-		start(b);
+	add_score(b);
+	while (true) {
+		cout << "What do you want to do? add, remove, show_score, show_average, quite" << endl;
+		string x;
+		cin >> x;
+		if (x == "add") {
+			add_score(b);
+		}
+		else if (x == "remove") {
+			remove_stuff(b);
+		}
+		else if (x == "show_score") {
+			show_scores(b);
+		}
+		else if (x == "show_average") {
+			average(b);
+		}
+		else if (x == "quite") {
+			quite();
+		}
+		else {
+			cout << "try again" << endl;
+		}
 	}
 }
 int main(){
