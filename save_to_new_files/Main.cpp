@@ -15,14 +15,14 @@ int add_0(int a, int b) {
 // string to int
 int convert_digits(string a) { 
 	int as = a.size();
-	int q = 0;
+	int q;
 	int i = 0;
-	int t = 0; 
-		for (int s = as; s > 0; s--) {
-			q = a[s-1] - 48;
-			t = add_0(q, s);
-			i = i + t;
-		}
+	int t;
+	for (int s = as; s > 0; s--) {
+		q = a[s - 1] - 48;
+		t = add_0(q, s - 1);
+		i = i + t;
+	}
 	return i;
 }
 int main(){
