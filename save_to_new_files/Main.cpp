@@ -2,32 +2,29 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+//puts 0s 
 using namespace std;
 int add_0(int a, int b) {
-	int q = 0;
-	int c=0;
-	while (c < b) {
-		q = q + (a * 10);
+	int q = a;
+	for(int c = 0; c<b; c++){
+		q = (q * 10);
 }
 	return q;
 }
-/*int convert_digits(string a) {
+
+// string to int
+int convert_digits(string a) { 
 	int as = a.size();
 	int q = 0;
-	int t = 0;
-	for (int a = 0; a < as; a++) {                                  //if 1= 1, if 10= 1 + one 0
-		// a control num of 0
-		
-		for (int s = 0; s < as; s++) {
-			//adds num
-			q = a[s] - 48;
-			t = t + q;
+	int i = 0;
+	int t = 0; 
+		for (int s = as; s > 0; s--) {
+			q = a[s-1] - 48;
+			t = add_0(q, s);
+			i = i + t;
 		}
-	}
-	return t;
-}*/
-
-
+	return i;
+}
 int main(){
 	//print from file
 	/*ifstream name("Text.txt");
@@ -65,13 +62,11 @@ int main(){
 		cout << line << endl;
 		a = a + line + "\n";
 	}
-	name.close();
-	int as = convert("326");
-	cout << as;*/
+	name.close();*/
 
-	int a = add_0(3, 5);
-
-	cout << a;
+	int u = convert_digits("326");
+	cout << u;
+	
 	//save file
 
 }
