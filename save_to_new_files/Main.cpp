@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include "text.txt"
 //puts 0s 
 using namespace std;
 int add_0(int a, int b) {
@@ -18,9 +19,9 @@ int convert_digits(string a) {
 	int q;
 	int i = 0;
 	int t;
-	for (int s = as; s > 0; s--) {
-		q = a[s - 1] - 48;
-		t = add_0(q, s - 1);
+	for (int s = 0; s < as; s++) {
+		q = a[s] - 48;
+		t = add_0(q, (as-s)-1);
 		i = i + t;
 	}
 	return i;
@@ -36,13 +37,13 @@ int main(){
 	string line;
 	while (getline(name, line)) {
 		cout << line << endl;
-		a= a + line +"\n";
+		a = a + line +"\n";
 	}
 	name.close();
-
+	*/
 
 	//print to file
-	ofstream file("Text.txt");
+	/*ofstream file("Text.txt");
 	if (!file.is_open()) {
 		cout << "file not found" << endl;
 		exit(1);
@@ -51,22 +52,19 @@ int main(){
 	file.close();*/
 
 	// side stuff
-	/*ifstream name("Text.txt");
-	string a = "";
-	if (!name.is_open()) {
+	/*ifstream aname("Text.txt");
+	string weer = "";
+	if (!aname.is_open()) {
 		cout << "file not found" << endl;
 		exit(1);
 	}
-	string line;
-	while (getline(name, line)) {
+	string aline;
+	while (getline(aname, aline)) {
 		cout << line << endl;
-		a = a + line + "\n";
+		weer = weer + aline + "\n";
 	}
-	name.close();*/
+	aname.close();*/
 
-	int u = convert_digits("326");
-	cout << u;
-	
 	//save file
-
+	convert_digits(line);
 }
