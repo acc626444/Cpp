@@ -1,6 +1,7 @@
 #include "Array_List.h" 
 #include <fstream>
 #include<string>
+//function empty list and save w/o save
 void  save(Array_List& b) {
 	int ad = b.Whats_my_size();
 	ofstream file("C:\\Users\\Test\\Source\\Repos\\hi\\test\\Text.txt");
@@ -12,21 +13,6 @@ void  save(Array_List& b) {
 		file << b.get_value(sd) << endl;
 	}
 	file.close();
-}
-string from_file() {
-	ifstream name("C:\\Users\\Test\\Source\\Repos\\hi\\test\\Text.txt");
-	string a = "";
-	if (!name.is_open()) {
-		cout << "file not found" << endl;
-		exit(1);
-	}
-	string line;
-	while (getline(name, line)) {
-		cout << line << endl;
-		a = a + line + "\n";
-	}
-	name.close();
-	return a;
 }
 int add_0(int a, int b) {
 	int q = a;
@@ -85,6 +71,24 @@ void quite() {
 	cout << "thank you for using my program";
 	exit(0);
 }
+string from_file(Array_List& b) {
+	ifstream name("C:\\Users\\Test\\Source\\Repos\\hi\\test\\Text.txt");
+	string a = "";
+	if (!name.is_open()) {
+		cout << "file not found" << endl;
+		exit(1);
+	}
+	string line;
+	while (getline(name, line)) {
+		//line == int  ; int --> array list
+		int c = convert_digits(line);
+		b.add(c);
+		a = a + line + "\n";
+	}
+	name.close();
+	b.print_list();
+	return a;
+}
 void start(Array_List& b) {
 	add_score(b);
 	while (true) {
@@ -114,6 +118,6 @@ void start(Array_List& b) {
 }
 int main(){
 	Array_List b;
-	from_file();
+	from_file(b);
 	start(b);
 }
