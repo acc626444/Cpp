@@ -9,6 +9,7 @@ private:
 	int max_size = 10;
 public:
 	int get_value(int index);
+	void clear();
 	Array_List();
 	int add(int add);
 	void print_list();

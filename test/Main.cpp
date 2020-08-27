@@ -1,7 +1,7 @@
 #include "Array_List.h" 
 #include <fstream>
 #include<string>
-//function empty list and save w/o save
+
 void  save(Array_List& b) {
 	int ad = b.Whats_my_size();
 	ofstream file("C:\\Users\\Test\\Source\\Repos\\hi\\test\\Text.txt");
@@ -47,7 +47,7 @@ void remove_stuff(Array_List& b) {
 		b.remove(b.indexof(x));
 	}
 	else {
-		cout << x << "does not exist" << endl;
+		cout << x << " does not exist" << endl;
 	}
 }
 void show_scores(Array_List& b) {
@@ -80,7 +80,6 @@ string from_file(Array_List& b) {
 	}
 	string line;
 	while (getline(name, line)) {
-		//line == int  ; int --> array list
 		int c = convert_digits(line);
 		b.add(c);
 		a = a + line + "\n";
@@ -90,9 +89,8 @@ string from_file(Array_List& b) {
 	return a;
 }
 void start(Array_List& b) {
-	add_score(b);
 	while (true) {
-		cout << "What do you want to do? add, remove, show_score, show_average, quite" << endl;
+		cout << "What do you want to do? add, remove, show_score, show_average, claer, quite" << endl;
 		string x;
 		cin >> x;
 		if (x == "add") {
@@ -107,9 +105,24 @@ void start(Array_List& b) {
 		else if (x == "show_average") {
 			average(b);
 		}
+		else if (x == "clear") {
+			b.clear();
+			cout << "You succesfully clear the scores!" << endl;
+		}
 		else if (x == "quite") {
-			save(b);
-			quite();
+			cout << "Would you like to save? (yes, no, cancel)" << endl;
+			string w;
+			cin >> w;
+			if (w == "yes") {
+				save(b);
+				quite();
+			}
+			else if (w == "no") {
+				quite();
+			}
+			else if(w != "cancel") {
+					cout << "try again" << endl;
+			}
 		}
 		else {
 			cout << "try again" << endl;

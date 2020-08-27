@@ -9,6 +9,9 @@ int Array_List::get_value(int index) {
 	error(index);
 	return q[index];
 }
+void Array_List::clear(){
+	size = 0;
+}
 Array_List::Array_List() {
 	q = new int[10];
 }
