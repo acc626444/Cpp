@@ -18,7 +18,7 @@ void print_board() {
 	}
 }
 bool action(int x, int y) {
-
+	//
 	//column
 	for (int a = y + 1; a < 8; a++) {
 		if (g[x][a] == queen) {
