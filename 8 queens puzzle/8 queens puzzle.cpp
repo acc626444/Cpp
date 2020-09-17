@@ -18,17 +18,16 @@ void print_board() {
 	}
 }
 bool action(int x, int y) {
-	//
 	//column
 	for (int a = y + 1; a < 8; a++) {
 		if (g[x][a] == queen) {
-			cout << "column up found" << endl;
+			//cout << "column up found" << endl;
 			return true;			
 		}
 	}
 	for (int a = y - 1; a >= 0; a--) {
 		if (g[x][a] == queen) {
-			cout << "column down found" << endl;
+			//cout << "column down found" << endl;
 			return true;
 		}
 	}
@@ -36,13 +35,13 @@ bool action(int x, int y) {
 	//row
 	for (int b = x + 1; b < 8; b++) {
 		if (g[b][y] == queen) {
-			cout << "row right found" << endl;
+			//cout << "row right found" << endl;
 			return true;
 		}
 	}
 	for (int b = x - 1; b >= 0; b--) {
 		if (g[b][y] == queen) {
-			cout << "row left found" << endl;
+			//cout << "row left found" << endl;
 			return true;
 		}
 	}
@@ -53,7 +52,7 @@ bool action(int x, int y) {
 	int b = x + 1;
 	for (int a = y + 1; a < 8 && b < 8; a++) {
 		if (g[b][a] == queen) {
-			cout << "up right found" << endl;
+			//cout << "up right found" << endl;
 			return true;			
 		}
 		b++;
@@ -65,7 +64,7 @@ bool action(int x, int y) {
 	for (int a = y + 1; a < 8 && b >= 0; a++) {
 		cout << b << " " << a << endl;
 		if (g[b][a] == queen) {
-			cout << "down left found" << endl;
+			//cout << "down left found" << endl;
 			return true;
 		}
 		b--;
@@ -75,7 +74,7 @@ bool action(int x, int y) {
 	b = x - 1;
 	for (int a = y - 1; a >= 0 && b >= 0; a--) {
 		if (g[b][a] == queen) {
-			cout << "up left found" << endl;
+			//cout << "up left found" << endl;
 			return true;
 		}
 		b--;
@@ -85,7 +84,7 @@ bool action(int x, int y) {
 	b = x + 1;
 	for (int a = y - 1; a >= 0 && b < 8; a--) {
 		if (g[b][a] == queen) {
-			cout << "down right found" << endl;
+			//cout << "down right found" << endl;
 			return true;
 		}
 		b++;
@@ -106,9 +105,18 @@ void set_queen(int q, int w)	 {
 	}
 	g[q][w] = queen;
 }
+void puzzle(int q) {
+	if (q < 8) {
+		/*
+		break to 8 column
+		place 1 queen and next til cant
+
+		*/
+	}
+}
 int main() {
 	make_board();
-	set_queen(3, 7);
+	set_queen(6, 7);
 	set_queen(4, 6);
 	print_board();
 	cout << action(4, 6) << endl;
