@@ -105,8 +105,30 @@ void set_queen(int q, int w)	 {
 	}
 	g[q][w] = queen;
 }
-void puzzle(int q) {
-	if (q < 8) {
+void remove_queen(int q, int w) {
+	if (q < 0 || w < 0 || q>7 || w>7) {
+		cout << "out of bound" << endl;
+		cout << q << ", " << w << endl;
+		exit(1);
+	}
+	else if (g[q][w] != "* ") {
+		cout << "no queen" << endl;
+		cout << q << ", " << w << endl;
+		exit(1);
+	}
+	g[q][w] = "+ ";
+}
+void puzzle(int q, int u) {
+	if (q < 8 && u < 8) {
+		set_queen(q, u);
+		if (action(q, u)==false) {
+			q++;
+			u = 0;
+		}
+		else {
+			puzzle(q, u + 1);
+		}
+
 		/*
 		break to 8 column
 		place 1 queen and next til cant
@@ -118,6 +140,7 @@ int main() {
 	make_board();
 	set_queen(6, 7);
 	set_queen(4, 6);
+	remove_queen(4, 6);
 	print_board();
 	cout << action(4, 6) << endl;
 	return 0;
