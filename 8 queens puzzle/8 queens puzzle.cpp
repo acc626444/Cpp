@@ -118,30 +118,40 @@ void remove_queen(int q, int w) {
 	}
 	g[q][w] = "+ ";
 }
-void puzzle(int q, int u) {
-	if (q < 8 && u < 8) {
-		set_queen(q, u);
-		if (action(q, u)==false) {
-			q++;
-			u = 0;
+bool puzzle(int q, int u) {
+	if (q < 8 && u < 8) {//works
+		if (action(q, u)==false) {// works
+			set_queen(q, u);
+			if (puzzle(q + 1, 0) == true) {// works
+				return true;
+			}
+			else {//not work
+				return puzzle(q, u + 1);//here!!!
+			}
 		}
 		else {
-			puzzle(q, u + 1);
+			if (u + 1 >= 8) {//not work // u more than 8
+				return false;
+			}
+			else {
+				if (puzzle(q, u + 1) == true) {//works
+					return true;
+				}
+				else {//not work // run out of space in colunm
+					puzzle(q - 1, u);
+				}
+			}
 		}
-
-		/*
-		break to 8 column
-		place 1 queen and next til cant
-
-		*/
+	}
+	else if (u >= 8) {
+		cout << "u higher than 8";
+		exit(1);
+	}
+	else{
+		cout << "congrates" << endl;
+		return true;
 	}
 }
 int main() {
-	make_board();
-	set_queen(6, 7);
-	set_queen(4, 6);
-	remove_queen(4, 6);
-	print_board();
-	cout << action(4, 6) << endl;
 	return 0;
 }
