@@ -2,6 +2,7 @@
 using namespace std;
 string g[8][8];
 string queen = "* ";
+bool puzzle(int q, int u);
 void make_board() {
 	for (int a = 0; a < 8; a++) {
 		for (int b = 0; b < 8; b++) {
@@ -118,15 +119,32 @@ void remove_queen(int q, int w) {
 	}
 	g[q][w] = "+ ";
 }
+bool check_column(int q, int u) {
+	if (u >= 8) {
+		return false;
+	}
+	else if (action(q, u) == true) {
+		return check_column(q, u + 1);
+	}
+	else {
+		if (puzzle(q, u)==true) {
+			cout << "congrates!!!" << endl;
+			return true;
+		}
+		else {
+			check_column(q, u + 1);
+		}
+	}
+}
 bool puzzle(int q, int u) {
-	if (q < 8 && u < 8) {//works
-		if (action(q, u)==false) {// works
+	/*if (q < 8 && u < 8) {//works
+		if (action(q, u)==false) {// doesn't hit
 			set_queen(q, u);
-			if (puzzle(q + 1, 0) == true) {// works
+			if (puzzle(q + 1, 0) == true) {// attacks queen
 				return true;
 			}
-			else {//not work
-				return puzzle(q, u + 1);//here!!!
+			else {//not work// queen causes future column to not work
+				return puzzle(q, u + 1);
 			}
 		}
 		else {
@@ -150,6 +168,16 @@ bool puzzle(int q, int u) {
 	else{
 		cout << "congrates" << endl;
 		return true;
+	}*/
+	if (q < 8) {
+			set_queen(q, u);
+		check_column(q + 1, 0);
+		if() {
+
+		}
+	}
+		else {
+		cout << "congrates!!!" << endl;
 	}
 }
 int main() {
