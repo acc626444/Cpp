@@ -119,7 +119,7 @@ void remove_queen(int q, int w) {
 	}
 	g[q][w] = "+ ";
 }
-bool check_column(int q, int u) {
+int check_column(int q, int u) {
 	if (u >= 8) {
 		return false;
 	}
@@ -136,7 +136,7 @@ bool check_column(int q, int u) {
 		}
 	}
 }
-bool puzzle(int q, int u) {
+bool puzzle() {
 	/*if (q < 8 && u < 8) {//works
 		if (action(q, u)==false) {// doesn't hit
 			set_queen(q, u);
@@ -169,16 +169,18 @@ bool puzzle(int q, int u) {
 		cout << "congrates" << endl;
 		return true;
 	}*/
-	if (q < 8) {
-			set_queen(q, u);
-		check_column(q + 1, 0);
-		if() {
-
+	int q = 0;
+	while (q < 8) {//need to check 1st column
+		int a = check_column(q, 0);
+		if (a >= 0) {
+			q++;
+		}
+		else {
+			q--;
 		}
 	}
-		else {
-		cout << "congrates!!!" << endl;
-	}
+	cout << "congrates!!!" << endl;
+	return true;
 }
 int main() {
 	return 0;
