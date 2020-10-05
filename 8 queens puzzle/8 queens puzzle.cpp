@@ -106,18 +106,14 @@ void set_queen(int q, int w)	 {
 	}
 	g[q][w] = queen;
 }
-void remove_queen(int q, int w) {
-	if (q < 0 || w < 0 || q>7 || w>7) {
+void remove_queen(int q) {
+	if (q < 0 || q>7 ) {
 		cout << "out of bound" << endl;
-		cout << q << ", " << w << endl;
+		cout << q << endl;
 		exit(1);
 	}
-	else if (g[q][w] != "* ") {
-		cout << "no queen" << endl;
-		cout << q << ", " << w << endl;
-		exit(1);
-	}
-	g[q][w] = "+ ";
+	
+	g[q][q] = "+ ";
 }
 int check_column(int q, int u) {
 	if (u >= 8) {
@@ -170,13 +166,18 @@ bool puzzle() {
 		return true;
 	}*/
 	int q = 0;
+	int ads [8] = { -1,-1,-1,-1,-1,-1,-1,-1 };
 	while (q < 8) {//need to check 1st column
-		int a = check_column(q, 0);
+		int a = check_column(q, ads[q]+1);
 		if (a >= 0) {
+			ads[q] = a;
 			q++;
 		}
 		else {
+			remove_queen
+			ads[q] = -1;
 			q--;
+
 		}
 	}
 	cout << "congrates!!!" << endl;
