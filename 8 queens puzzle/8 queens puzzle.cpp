@@ -105,7 +105,7 @@ void set_queen(int q, int w)	 {
 		exit(1);
 	}
 	g[q][w] = queen;
-}
+}//q
 void remove_queen(int q) {
 	if (q < 0 || q>7 ) {
 		cout << "out of bound" << endl;
