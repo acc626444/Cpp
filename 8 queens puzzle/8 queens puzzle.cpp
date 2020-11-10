@@ -105,32 +105,19 @@ void set_queen(int q, int w)	 {
 		exit(1);
 	}
 	g[q][w] = queen;
-}//q
-void remove_queen(int q) {
-	if (q < 0 || q>7 ) {
+}
+void remove_queen(int x, int y) {
+	if (x < 0 || x>7|| y < 0 || y > 7) {
 		cout << "out of bound" << endl;
-		cout << q << endl;
+		cout << x << endl;
+		cout << y << endl;
 		exit(1);
 	}
 	
-	g[q][q] = "+ ";
+	g[x][y] = "+ ";
 }
 int check_column(int q, int u) {
-	if (u >= 8) {
-		return false;
-	}
-	else if (action(q, u) == true) {
-		return check_column(q, u + 1);
-	}
-	else {
-		if (puzzle(q, u)==true) {
-			cout << "congrates!!!" << endl;
-			return true;
-		}
-		else {
-			check_column(q, u + 1);
-		}
-	}
+	// 1) only 1 column at a time (q) 2) start at spot (u) 3) return -1 (false), return spot
 }
 bool puzzle() {
 	/*if (q < 8 && u < 8) {//works
@@ -173,11 +160,10 @@ bool puzzle() {
 			ads[q] = a;
 			q++;
 		}
-		else {
-			remove_queen
+		else {	
 			ads[q] = -1;
 			q--;
-
+			remove_queen(q, ads[q]);
 		}
 	}
 	cout << "congrates!!!" << endl;
