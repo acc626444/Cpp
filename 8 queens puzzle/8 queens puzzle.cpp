@@ -1,12 +1,13 @@
 #include <iostream>
 using namespace std;
 string g[8][8];
-string queen = "* ";
+string queen = "X ";
 bool puzzle(int q, int u);
-void make_board() {
+void make_board(int x, int y) {
 	for (int a = 0; a < 8; a++) {
 		for (int b = 0; b < 8; b++) {
 			g[a][b] = "+ ";
+			g[x][y] = "x ";
 		}
 	}
 }
@@ -63,7 +64,6 @@ bool action(int x, int y) {
 	//down left
 	b = x - 1;
 	for (int a = y + 1; a < 8 && b >= 0; a++) {
-		cout << b << " " << a << endl;
 		if (g[b][a] == queen) {
 			//cout << "down left found" << endl;
 			return true;
@@ -90,7 +90,6 @@ bool action(int x, int y) {
 		}
 		b++;
 	}
-	cout << "not found" << endl;
 	return false;
 }
 void set_queen(int q, int w)	 {
@@ -102,6 +101,7 @@ void set_queen(int q, int w)	 {
 	else if (g[q][w] != "+ ") {
 		cout << "taken" << endl;
 		cout << q << ", " << w << endl;
+		print_board();
 		exit(1);
 	}
 	g[q][w] = queen;
@@ -117,42 +117,17 @@ void remove_queen(int x, int y) {
 	g[x][y] = "+ ";
 }
 int check_column(int q, int u) {
-	// 1) only 1 column at a time (q) 2) start at spot (u) 3) return -1 (false), return spot
+	// 1) only 1 column at a time (q) 2) start at spot (u) 3) return -1 (false), return spot 4) set queen
+	for (int o = u; o < 8; o++) {
+		if (!action(q, o)) {
+			set_queen(q, o);
+			return o;
+		}
+	}
+	return -1;
 }
-bool puzzle() {
-	/*if (q < 8 && u < 8) {//works
-		if (action(q, u)==false) {// doesn't hit
-			set_queen(q, u);
-			if (puzzle(q + 1, 0) == true) {// attacks queen
-				return true;
-			}
-			else {//not work// queen causes future column to not work
-				return puzzle(q, u + 1);
-			}
-		}
-		else {
-			if (u + 1 >= 8) {//not work // u more than 8
-				return false;
-			}
-			else {
-				if (puzzle(q, u + 1) == true) {//works
-					return true;
-				}
-				else {//not work // run out of space in colunm
-					puzzle(q - 1, u);
-				}
-			}
-		}
-	}
-	else if (u >= 8) {
-		cout << "u higher than 8";
-		exit(1);
-	}
-	else{
-		cout << "congrates" << endl;
-		return true;
-	}*/
-	int q = 0;
+bool puzzle(int a) {
+	int q = a;
 	int ads [8] = { -1,-1,-1,-1,-1,-1,-1,-1 };
 	while (q < 8) {//need to check 1st column
 		int a = check_column(q, ads[q]+1);
@@ -166,9 +141,33 @@ bool puzzle() {
 			remove_queen(q, ads[q]);
 		}
 	}
+	print_board();
 	cout << "congrates!!!" << endl;
 	return true;
 }
 int main() {
+	char a;
+	cout << "How many queens do you want to start with?" << endl;
+	cin >> a;
+	if (a<0){
+		for (int qw = 0; qw < a; qw++) {
+			int e;
+			int t;
+			cout << "place y coordinate" << qw+1 << endl;
+			cin >> e;
+			cout << "place x coordinate" << qw+1<< endl;
+			cin >> t;
+			make_board(t, e);
+		}
+		puzzle(a);
+	}
+	else if(a=0) {
+		make_board(0,0);
+		puzzle(0);
+	}
+	else {
+		cout << "invalide character" << endl;
+		exit(1);
+	}
 	return 0;
 }
