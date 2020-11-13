@@ -30,13 +30,13 @@ void print_board() {
 bool action(int x, int y) {
 	//column
 	for (int a = y + 1; a < 8; a++) {
-		if (g[x][a] == queen) {
+		if (g[x][a] != "+ ") {
 			//cout << "column up found" << endl;
 			return true;			
 		}
 	}
 	for (int a = y - 1; a >= 0; a--) {
-		if (g[x][a] == queen) {
+		if (g[x][a] != "+ ") {
 			//cout << "column down found" << endl;
 			return true;
 		}
@@ -44,13 +44,13 @@ bool action(int x, int y) {
 
 	//row
 	for (int b = x + 1; b < 8; b++) {
-		if (g[b][y] == queen) {
+		if (g[b][y] != "+ ") {
 			//cout << "row right found" << endl;
 			return true;
 		}
 	}
 	for (int b = x - 1; b >= 0; b--) {
-		if (g[b][y] == queen) {
+		if (g[b][y] != "+ ") {
 			//cout << "row left found" << endl;
 			return true;
 		}
@@ -61,7 +61,7 @@ bool action(int x, int y) {
 	//up right
 	int b = x + 1;
 	for (int a = y + 1; a < 8 && b < 8; a++) {
-		if (g[b][a] == queen) {
+		if (g[b][a] != "+ ") {
 			//cout << "up right found" << endl;
 			return true;			
 		}
@@ -72,7 +72,7 @@ bool action(int x, int y) {
 	//down left
 	b = x - 1;
 	for (int a = y + 1; a < 8 && b >= 0; a++) {
-		if (g[b][a] == queen) {
+		if (g[b][a] != "+ ") {
 			//cout << "down left found" << endl;
 			return true;
 		}
@@ -82,7 +82,7 @@ bool action(int x, int y) {
 	//up left
 	b = x - 1;
 	for (int a = y - 1; a >= 0 && b >= 0; a--) {
-		if (g[b][a] == queen) {
+		if (g[b][a] != "+ ") {
 			//cout << "up left found" << endl;
 			return true;
 		}
@@ -92,7 +92,7 @@ bool action(int x, int y) {
 	//down right
 	b = x + 1;
 	for (int a = y - 1; a >= 0 && b < 8; a--) {
-		if (g[b][a] == queen) {
+		if (g[b][a] != "+ ") {
 			//cout << "down right found" << endl;
 			return true;
 		}
@@ -102,8 +102,9 @@ bool action(int x, int y) {
 }
 void set_queen(int q, int w)	 {
 	if (q < 0 || w < 0 || q>7 || w>7) {
-		cout << "out of bound" << endl;
+		cout << "out of bound set_queen" << endl;
 		cout << q << ", " << w << endl;
+		print_board();
 		exit(1);
 	}
 	else if (g[q][w] != "+ ") {
@@ -116,8 +117,9 @@ void set_queen(int q, int w)	 {
 }
 void starting_queen(int q, int w) {
 	if (q < 0 || w < 0 || q>7 || w>7) {
-		cout << "out of bound" << endl;
+		cout << "out of bound starting queen" << endl;
 		cout << q << ", " << w << endl;
+		print_board();
 		exit(1);
 	}
 	else if (g[q][w] != "+ ") {
@@ -130,12 +132,12 @@ void starting_queen(int q, int w) {
 }
 void remove_queen(int x, int y) {
 	if (x < 0 || x>7|| y < 0 || y > 7) {
-		cout << "out of bound" << endl;
+		cout << "out of bound remove queen" << endl;
 		cout << x << endl;
 		cout << y << endl;
+		print_board();
 		exit(1);
 	}
-	
 	g[x][y] = "+ ";
 }
 int check_column(int q, int u) {
@@ -158,9 +160,17 @@ bool puzzle() {
 				q++;
 			}
 			else {
-				ads[q] = -1;
-				q--;
-				remove_queen(q, ads[q]);
+				if (g[q][ads[q]] == "O ") {
+					cout << "asdrteagres" << endl;
+					q--;
+			}
+				else {
+					print_board();
+					cout << endl;
+					ads[q] = -1;
+					q--;
+					remove_queen(q, ads[q]);
+				}
 			}
 		}
 		else {
@@ -172,7 +182,8 @@ bool puzzle() {
 	return true;
 }
 int main() {
-	make_board();
+	make_board(); 
+	starting_queen(0, 1);
 	int a;
 	cout << "How many queens do you want to start with?" << endl;
 	cin >> a;
@@ -184,7 +195,7 @@ int main() {
 			cin >> e;
 			cout << "place x coordinate" << endl;
 			cin >> t;
-			set_queen(t, e);
+			starting_queen(t, e);
 		}
 		puzzle();
 	}
