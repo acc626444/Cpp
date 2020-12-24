@@ -13,7 +13,7 @@ void make_board() {
 }
 bool start_column_check(int q) {
 	for (int x = 0; x < 8; x++) {
-		if (g[q][x]== queen2) {
+		if (g[q][x] == queen2) {
 			return true;
 		}
 	}
@@ -32,7 +32,7 @@ bool action(int x, int y) {
 	for (int a = y + 1; a < 8; a++) {
 		if (g[x][a] != "+ ") {
 			//cout << "column up found" << endl;
-			return true;			
+			return true;
 		}
 	}
 	for (int a = y - 1; a >= 0; a--) {
@@ -63,7 +63,7 @@ bool action(int x, int y) {
 	for (int a = y + 1; a < 8 && b < 8; a++) {
 		if (g[b][a] != "+ ") {
 			//cout << "up right found" << endl;
-			return true;			
+			return true;
 		}
 		b++;
 
@@ -100,7 +100,7 @@ bool action(int x, int y) {
 	}
 	return false;
 }
-void set_queen(int q, int w)	 {
+void set_queen(int q, int w) {
 	if (q < 0 || w < 0 || q>7 || w>7) {
 		cout << "out of bound set_queen" << endl;
 		cout << q << ", " << w << endl;
@@ -131,7 +131,7 @@ void starting_queen(int q, int w) {
 	g[q][w] = queen2;
 }
 void remove_queen(int x, int y) {
-	if (x < 0 || x>7|| y < 0 || y > 7) {
+	if (x < 0 || x>7 || y < 0 || y > 7) {
 		cout << "out of bound remove queen" << endl;
 		cout << x << endl;
 		cout << y << endl;
@@ -151,7 +151,7 @@ int check_column(int q, int u) {
 }
 bool puzzle() {
 	int q = 0;
-	int ads [8] = { -1,-1,-1,-1,-1,-1,-1,-1 };
+	int ads[8] = { -1,-1,-1,-1,-1,-1,-1,-1 };
 	while (q < 8) {//need to check 1st column
 		if (start_column_check(q) == false) {
 			int a = check_column(q, ads[q] + 1);
@@ -160,14 +160,18 @@ bool puzzle() {
 				q++;
 			}
 			else {
-					print_board(); // skip column with O going backwards
+				if (g[q][ads[q]] == "O ") {
+					cout << "asdrteagres" << endl;
+					q--;
+				}
+				else {
+					print_board();
 					cout << endl;
-
 					ads[q] = -1;
 					q--;
-					for(;start_column_check(q);q--){}
 					remove_queen(q, ads[q]);
 				}
+			}
 		}
 		else {
 			q++;
@@ -178,11 +182,12 @@ bool puzzle() {
 	return true;
 }
 int main() {
-	make_board(); 
+	make_board();
+	starting_queen(0, 1);
 	int a;
 	cout << "How many queens do you want to start with?" << endl;
 	cin >> a;
-	if (a>0){
+	if (a > 0) {
 		for (int qw = 0; qw < a; qw++) {
 			int e;
 			int t;
@@ -191,15 +196,10 @@ int main() {
 			cout << "place x coordinate" << endl;
 			cin >> t;
 			starting_queen(t, e);
-			if (action(t, e) == true) {
-				print_board();
-				cout << "DOES NOT WORK!!!" << endl;
-				exit(1);
-			}
 		}
 		puzzle();
 	}
-	else if(a==0) {
+	else if (a == 0) {
 		puzzle();
 	}
 	else {
