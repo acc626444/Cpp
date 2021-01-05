@@ -151,7 +151,7 @@ int check_column(int q, int u) {
 }
 bool puzzle() {
 	int q = 0;
-	int ads [8] = { -1,-1,-1,-1,-1,-1,-1,-1 };
+	int ads[8] = { -1,-1,-1,-1,-1,-1,-1,-1 };
 	while (q < 8) {//need to check 1st column
 		if (start_column_check(q) == false) {
 			int a = check_column(q, ads[q] + 1);
@@ -160,25 +160,35 @@ bool puzzle() {
 				q++;
 			}
 			else {
+
+				print_board(); // skip column with O going backwards//
+
+				if (g[q][ads[q]] == "O ") {
+					q--;
+				}
+				else {
 					print_board(); // skip column with O going backwards//
 					cout << endl;
-
 					ads[q] = -1;
-					q--;
-					for(;start_column_check(q);q--){}
+					for (; start_column_check(q); q--) {}
+					if (g[q][ads[q]] == "O ") {
+						q--;
+					}
 					remove_queen(q, ads[q]);
 				}
+			}
 		}
 		else {
 			q++;
 		}
+		print_board();
+		cout << "congrates!!!" << endl;
+		return true;
 	}
-	print_board();
-	cout << "congrates!!!" << endl;
-	return true;
 }
+
 int main() {
-	make_board(); 
+	make_board();
 	int a;
 	cout << "How many queens do you want to start with?" << endl;
 	cin >> a;
