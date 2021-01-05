@@ -168,7 +168,6 @@ bool puzzle() {
 				}
 				else {
 					print_board(); // skip column with O going backwards
-					print_board(); // skip column with O going backwards//
 					cout << endl;
 					ads[q] = -1;
 					q--;
@@ -179,7 +178,7 @@ bool puzzle() {
 					if (g[q][ads[q]] == "O ") {
 						q--;
 					}
-					remove_queen(q, ads[q]);
+					remove_queen(q, ads[q]);////
 				}
 			}
 		}
