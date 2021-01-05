@@ -160,7 +160,7 @@ bool puzzle() {
 				q++;
 			}
 			else {
-					print_board(); // skip column with O going backwards
+					print_board(); // skip column with O going backwards//
 					cout << endl;
 
 					ads[q] = -1;
