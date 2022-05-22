@@ -1,4 +1,5 @@
 #include <iostream>
+#include <Windows.h>
 using namespace std;
 void space(int x) {
 	for (int w = 0; w < x; w++) {
@@ -49,13 +50,13 @@ void print_ex() {
 	space(2);
 }
 void if_def() {
-	cout << "Definition: The function of IF only activates if the statement inside is true." << endl << endl;
-	cout << "1) Type thec word if. This tells the computer 'I am using the if condition' " << endl;
+	cout << "Definition: The function activates granted that the given condition is true." << endl << endl;
+	cout << "1) Type the word if. This tells the computer 'I am using the if condition' " << endl;
 	cout << "2) After if, type () directly after. This tells the computer that a condition is being used. In () is where you put your condition." << endl;
-	cout << "3) After if (), type you statement. This wil ONLY WORK IF it is true. The statement is the condition you want to happen in order to run what is inside the function." << endl;
+	cout << "3) After if (), type you statement. This will ONLY WORK IF it is true. The statement is the condition you want to happen in order to run what is inside the function." << endl;
 	cout << "4) The next step is to add {}. This is what is going to happen if the condition is true." << endl;
-	cout << "5) The major important part id done! Now for the fun part. Between {}, put any line of code you want to happen if the condition is true." << endl;
-	cout << "Disclaimer: **If your statement is in letters, it needs to be incloses in double quotations, however I cannot display that here because I am writing in code." << endl << "              Therefor, I be using single quotations**" << endl;
+	cout << "5) The major important part is done! Now for the fun part. Between {}, put any line of code you want to happen if the condition is true." << endl;
+	cout << "Disclaimer: **If your statement is in letters, it needs to be enclosed in double quotations, however I cannot display that here because I am writing in code." << endl << "              Therefor, I be using single quotations**" << endl;
 	space(1);
 	cout << "the line will look like:" << endl;
 	cout << "if ('your condition') { do this } " << endl;
@@ -176,50 +177,4 @@ void while_ex() {
 		y = 11;
 	}
 }
-void other() {
 
-	/*
-		ELSE IF
-*/
-	elseif_def();
-	space(1);
-	elseif_ex();
-	space(2);
-	/*
-			ELSE
-	*/
-
-	else_def();
-	space(1);
-	else_ex();
-	space(3);
-	/*
-			FOR
-	*/
-	cout << "FOR LOOP:" << endl;
-	for_def();
-	space(1);
-	for_ex();
-	space(3);
-	/*
-			WHILE
-	*/
-	cout << "WHILE LOOP:" << endl;
-	while_def();
-	space(1);
-	while_ex();
-	space(3);
-}
-void print() {
-	cout << "writting to the sceeen means to PRINT" << endl;
-	print_def();
-	space(1);
-	print_ex();
-	space(3);
-}
-void if_condition() {
-	if_def();
-	space(1);
-	if_ex();
-	space(2);
-}
