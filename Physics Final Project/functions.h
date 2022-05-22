@@ -1,5 +1,5 @@
 #include <iostream>
-#include <Windows.h>
+
 using namespace std;
 void space(int x) {
 	for (int w = 0; w < x; w++) {
@@ -50,6 +50,8 @@ void print_ex() {
 	space(2);
 }
 void if_def() {
+
+
 	cout << "Definition: The function activates granted that the given condition is true." << endl << endl;
 	cout << "1) Type the word if. This tells the computer 'I am using the if condition' " << endl;
 	cout << "2) After if, type () directly after. This tells the computer that a condition is being used. In () is where you put your condition." << endl;
