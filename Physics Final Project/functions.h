@@ -50,15 +50,16 @@ void print_ex() {
 	space(2);
 }
 void if_def() {
-
-
 	cout << "Definition: The function activates granted that the given condition is true." << endl << endl;
-	cout << "1) Type the word if. This tells the computer 'I am using the if condition' " << endl;
-	cout << "2) After if, type () directly after. This tells the computer that a condition is being used. In () is where you put your condition." << endl;
-	cout << "3) After if (), type you statement. This will ONLY WORK IF it is true. The statement is the condition you want to happen in order to run what is inside the function." << endl;
+	cout << "1) Type the word else if. This tells the computer 'I am using the if condition' " << endl;
+	cout << "2) After, type () directly after. This tells the computer that a condition is being used. In () is where you put your condition." << endl;
+	cout << "3) After if (), type you statement. This will ONLY WORK IF it is true. The statement is the condition you want to happen";
+	cout << " in order to run what is inside the function." << endl;
 	cout << "4) The next step is to add {}. This is what is going to happen if the condition is true." << endl;
 	cout << "5) The major important part is done! Now for the fun part. Between {}, put any line of code you want to happen if the condition is true." << endl;
-	cout << "Disclaimer: **If your statement is in letters, it needs to be enclosed in double quotations, however I cannot display that here because I am writing in code." << endl << "              Therefor, I be using single quotations**" << endl;
+	cout << "Disclaimer: **If your statement is in letters, it needs to be enclosed in double quotations,";
+	cout << " however I cannot display that here because I am writing in code." << endl;
+	cout << "              Therefor, I be using single quotations**" << endl;
 	space(1);
 	cout << "the line will look like:" << endl;
 	cout << "if ('your condition') { do this } " << endl;
@@ -72,18 +73,17 @@ void if_ex() {
 	cout << "}" << endl;
 	space(1);
 	cout << "What you see on the screen after printing:" << endl;
-	cout << "line 1: 1" << endl << "[Code ends here]" << endl;
+	cout << "1 [Code ends here]" << endl;
 	space(2);
 
 	cout << "example 1b (variable x is equal to integer 1, PRINT 1):" << endl;
-	cout << "" << endl;
 	cout << "if (x == 1){" << endl;
 	cout << "x+1;" << endl;
-	cout << "cout << 1;" << endl;
+	cout << "cout << 1 << endl;" << endl;
 	cout << "}" << endl;
 	space(1);
 	cout << "What you see on the screen after printing:" << endl;
-	cout << "line 1: 1" << endl << "line 2:" << endl << "[Code ends here]" << endl;
+	cout << "1" << endl << "[Code ends here]" << endl;
 	space(2);
 
 	cout << "example 2a (variable x is equal to string 'hey'. IF x ios equal to hey, PRINT hey):" << endl;
@@ -94,54 +94,154 @@ void if_ex() {
 	cout << "}" << endl;
 	space(1);
 	cout << "What you see on the screen after printing:" << endl;
-	cout << "line 1: hey" << endl << "[Code ends here]" << endl;
+	cout << "hey [Code ends here]" << endl;
 	space(2);
 
 	cout << "example 2b (variable x is equal to string 'hey'. IF x ios equal to hey, PRINT hey):" << endl;
 	cout << "if (y == 'hey'){  (NOTE: remember to use DOUBLE QUOTATIONS)" << endl;
-	cout << "cout << 'hey';  (NOTE: remember to use DOUBLE QUOTATIONS)" << endl;
+	cout << "cout << 'hey' << endl;  (NOTE: remember to use DOUBLE QUOTATIONS)" << endl;
 	cout << "}" << endl;
 	space(1);
 	cout << "What you see on the screen after printing:" << endl;
-	cout << "line 1: hey" << endl << "line 2:" << endl << "[Code ends here]" << endl;
+	cout << "hey" << endl << "[Code ends here]" << endl;
 	space(2);
 }
 void elseif_def() {
-	cout << "else if is a secondary condition" << endl;
+	cout << "Definition: The function activates granted that the given condition is true. It is an  addon to the if(){} function." << endl << endl;
+	cout << "1) Type the word else if. This tells the computer 'I am using a 2nd condition' " << endl;
+	cout << "2) After else if, type () directly after. This tells the computer that a condition is being used. In () is where you put your condition." << endl;
+	cout << "3) After else if (), type you statement. This will ONLY WORK IF it is true. The statement is the condition you want to happen";
+	cout << " in order to run what is inside the function." << endl;
+	cout << "4) The next step is to add {}. This is what is going to happen if the condition is true." << endl;
+	cout << "5) The major important part is done! Now for the fun part. Between {}, put any line of code you want to happen if the condition is true." << endl;
+	cout << "Disclaimer: **If your statement is in letters, it needs to be enclosed in double quotations,";
+	cout << " however I cannot display that here because I am writing in code." << endl;
+	cout << "              Therefor, I be using single quotations**" << endl;
 	space(1);
 	cout << "the line will look like:" << endl;
-	cout << "else if (condition is true) { do this } " << endl;
-
+	cout << "else if ('your condition') { do this } " << endl;
 }
 void elseif_ex() {
-	cout << "example:" << endl;
-	cout << "else if (x == 2){" << endl;
-	cout << "cout << 2;" << endl;
+	cout << "example 1a (variable x is equal to integer 1, PRINT 1):" << endl;
+	cout << "int x = 1;" << endl;
+	cout << "if (x == 0){" << endl;
+	cout << "x+1;" << endl;
+	cout << "cout << 0;" << endl;
 	cout << "}" << endl;
+	cout << "else if (x == 1){" << endl;
+	cout << "x+1;" << endl;
+	cout << "cout << 1;" << endl;
+	cout << "}" << endl;
+	space(1);
+	cout << "What you see on the screen after printing:" << endl;
+	cout << "1 [Code ends here]" << endl;
 	space(2);
-	cout << "terminal:" << endl;
-	cout << "2" << endl;
+
+	cout << "example 1b (variable x is equal to integer 1, PRINT 1):" << endl;
+	cout << "else if (x == 1){" << endl;
+	cout << "x+1;" << endl;
+	cout << "cout << 1 << endl;" << endl;
+	cout << "}" << endl;
+	space(1);
+	cout << "What you see on the screen after printing:" << endl;
+	cout << "1" << endl << "[Code ends here]" << endl;
+	space(2);
+
+	cout << "example 2a (variable x is equal to string 'hey'. IF x ios equal to hey, PRINT hey):" << endl;
+	cout << "string y = 'hey';  (NOTE: remember to use DOUBLE QUOTATIONS)" << endl;
+	cout << "else if (y == 'hey'){  (NOTE: remember to use DOUBLE QUOTATIONS)" << endl;
+	cout << "cout << 'hey';  (NOTE: remember to use DOUBLE QUOTATIONS)" << endl;
+	cout << "y = 'yo';  (NOTE: remember to use DOUBLE QUOTATIONS)" << endl;
+	cout << "}" << endl;
+	space(1);
+	cout << "What you see on the screen after printing:" << endl;
+	cout << "hey [Code ends here]" << endl;
+	space(2);
+
+	cout << "example 2b (variable x is equal to string 'hey'. IF x ios equal to hey, PRINT hey):" << endl;
+	cout << "else if (y == 'hey'){  (NOTE: remember to use DOUBLE QUOTATIONS)" << endl;
+	cout << "cout << 'hey' << endl;  (NOTE: remember to use DOUBLE QUOTATIONS)" << endl;
+	cout << "}" << endl;
+	space(1);
+	cout << "What you see on the screen after printing:" << endl;
+	cout << "hey" << endl << "[Code ends here]" << endl;
+	space(2);
 }
 void else_def() {
-	cout << "else is a condition" << endl;
+	cout << "Definition: The function activates when allother conditions are false." << endl << endl;
+	cout << "1) Type the word else. This tells the computer 'when all other conditions are false' " << endl;
+	cout << "2) After else, type {} directly after. no need for (), because all other conditions were not true." << endl;
+	cout << "3) Between {}, put any line of code you want to happen if the other conditions are not true." << endl;
+	cout << "Disclaimer: **If your statement is in letters, it needs to be enclosed in double quotations,";
+	cout << " however I cannot display that here because I am writing in code." << endl;
+	cout << "              Therefor, I be using single quotations**" << endl;
 	space(1);
 	cout << "the line will look like:" << endl;
 	cout << "else { do this } " << endl;
 }
 void else_ex() {
-	cout << "example:" << endl;
-	cout << "else {" << endl;
-	cout << "cout << 3;" << endl;
+	cout << "example 1a (variable x is not equal to integer 0, PRINT x=? ):" << endl;
+	cout << "int x = 1;" << endl;
+	cout << "if (x == 0){" << endl;
+	cout << "x+1;" << endl;
+	cout << "cout << 0;" << endl;
 	cout << "}" << endl;
+	cout << "else {" << endl;
+	cout << "cout << x=? << endl;" << endl;
+	cout << "}" << endl;
+	space(1);
+	cout << "What you see on the screen after printing:" << endl;
+	cout << "x=?" << endl << "[Code ends here]" << endl;
 	space(2);
-	cout << "terminal:" << endl;
-	cout << "3" << endl;
+
+	cout << "example 1b (variable x is equal to integer 1, PRINT 1):" << endl;
+	cout << "int x = 1;" << endl;
+	cout << "if (x == 0){" << endl;
+	cout << "x+1;" << endl;
+	cout << "cout << 0;" << endl;
+	cout << "}" << endl;
+	cout << "else {" << endl;
+	cout << "cout << x=?;" << endl;
+	cout << "}" << endl;
+	space(1);
+	cout << "What you see on the screen after printing:" << endl;
+	cout << "x=? [Code ends here]" << endl;
+	space(2);
+
+	cout << "example 2a (variable x is equal to string 'hey'. IF x ios equal to hey, PRINT hey):" << endl;
+	cout << "string y = 'hey';  (NOTE: remember to use DOUBLE QUOTATIONS)" << endl;
+	cout << "if (y == 'yo'){  (NOTE: remember to use DOUBLE QUOTATIONS)" << endl;
+	cout << "cout << 'yo';  (NOTE: remember to use DOUBLE QUOTATIONS)" << endl;
+	cout << "}" << endl;
+	cout << "else {" << endl;
+	cout << "cout << 'not found' << endl;  (NOTE: remember to use DOUBLE QUOTATIONS)" << endl;
+	cout << "}" << endl;
+	space(1);
+	cout << "What you see on the screen after printing:" << endl;
+	cout << "not found" << endl << "[Code ends here]" << endl;
+	space(2);
+
+	cout << "example 2b (variable x is equal to string 'hey'. IF x ios equal to hey, PRINT hey):" << endl;
+	cout << "string y = 'hey';  (NOTE: remember to use DOUBLE QUOTATIONS)" << endl;
+	cout << "if (y == 'yo'){  (NOTE: remember to use DOUBLE QUOTATIONS)" << endl;
+	cout << "cout << 'yo';  (NOTE: remember to use DOUBLE QUOTATIONS)" << endl;
+	cout << "}" << endl;
+	cout << "else {" << endl;
+	cout << "cout << 'not found';  (NOTE: remember to use DOUBLE QUOTATIONS)" << endl;
+	cout << "}" << endl;
+	space(1);
+	cout << "What you see on the screen after printing:" << endl;
+	cout << "not found [Code ends here]" << endl;
+	space(2);
 }
 void for_def() {
-	cout << "for is use to make a loop with an increasing variable or for a specific amount of time" << endl;
-	cout << "# is a stand in for a number" << endl;
-	cout << "x is a stand in for a variable name" << endl;
-	cout << "x++ adds 1 to a variable" << endl;
+	cout << "Definition: The function activates for a certain amount of time." << endl << endl;
+	cout << "1) Type the word for. This tells the computer 'I am using a condition repeatatively' " << endl;
+	cout << "2) After for, type () directly after. This tells the computer that a condition is being used. " << endl;
+	cout << "3) After for (), inside the (), type int x=0; x<#; x++ . This statement tells the computer 'hey, variable x is 0. As long as x is less than, you number of choice," << endl;
+	cout << " do something and increase x by 1' " << endl;
+	cout << "4) After for (statement), type {} directly after." << endl;
+	cout << "5) Between {}, put any line of code you want to happen repeatedly." << endl;
 	space(1);
 	cout << "the line will look like:" << endl;
 	cout << "for(int x = 0; x < #; x++) { do this } " << endl;

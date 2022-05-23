@@ -3,21 +3,6 @@
 void other() {
 
 	/*
-		ELSE IF
-*/
-	elseif_def();
-	space(1);
-	elseif_ex();
-	space(2);
-	/*
-			ELSE
-	*/
-
-	else_def();
-	space(1);
-	else_ex();
-	space(3);
-	/*
 			FOR
 	*/
 	cout << "FOR LOOP:" << endl;
@@ -47,6 +32,18 @@ void if_condition() {
 	if_ex();
 	space(2);
 }
+void elseif_condition() {
+	elseif_def();
+	space(1);
+	elseif_ex();
+	space(2);
+}
+void else_condition() {
+	else_def();
+	space(1);
+	else_ex();
+	space(23;
+}
 
 
 int main() {
@@ -61,8 +58,16 @@ int main() {
 	/*
 				IF
 	*/
-	if_condition();
-	
+	//if_condition();
+	/*
+	ELSE IF
+	*/
+	//elseif_condition();
+		/*
+			ELSE
+	*/
+
+
 
 
 }
