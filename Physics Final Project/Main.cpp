@@ -1,18 +1,6 @@
 #include "functions.h"
 
-void other() {
-
-	/*
-			FOR
-	*/
-	cout << "FOR LOOP:" << endl;
-	for_def();
-	space(1);
-	for_ex();
-	space(3);
-	/*
-			WHILE
-	*/
+void while_loop() {
 	cout << "WHILE LOOP:" << endl;
 	while_def();
 	space(1);
@@ -42,7 +30,14 @@ void else_condition() {
 	else_def();
 	space(1);
 	else_ex();
-	space(23;
+	space(3);
+}
+void for_loop() {
+	cout << "FOR LOOP:" << endl;
+	for_def();
+	space(1);
+	for_ex();
+	space(3);
 }
 
 
@@ -54,20 +49,25 @@ int main() {
 	/*
 		CONDITIONS
 	*/
-	//cout << "IF/ ELSE STATEMENT:" << endl;
+	cout << "IF/ ELSE STATEMENT:" << endl;
 	/*
 				IF
 	*/
-	//if_condition();
+	if_condition();
 	/*
 	ELSE IF
 	*/
-	//elseif_condition();
+	elseif_condition();
 		/*
 			ELSE
 	*/
-
-
-
-
+	else_condition();
+		/*
+			FOR
+	*/
+	for_loop();
+	/*
+		WHILE
+	*/
+	while_loop();
 }
