@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
-void ab(string input, string output) {
+void ab( string input , string output ) {
+	cout << "in ab" << endl;
 	if ( input == "yes" ) {
 		cout << output << endl;
 	}
@@ -8,12 +9,18 @@ void ab(string input, string output) {
 		cout << "Too back. Here it is!\n";
 	}
 }
-void error( string input, string output  ) {
-		if ( input != "yes" || input != "no" ) {
-			ab( input , output );
+void error( string input , string output ) {
+	cout << "in error" << endl;
+	if ( input == "yes" || input == "no" ) {
+
+		cout << 2 << endl;
+		ab( input , output );
 	}
-		else {
-			exit( 1 );
-			//error( input , output );
-		}
+	else {
+		cout << 3 << endl;
+		//exit( 1 );
+		cout << "Do you want advice\n";
+		cin >> b;
+		error( b , output );
+	}
 }
