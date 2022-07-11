@@ -3,7 +3,7 @@ using namespace std;
 void ab ( string input, string output ) {
 	if ( input != "yes" || input != "no" ) {
 		cout << "try again/n";
-	}
+	} 
 	else {
 		if ( input == "yes" ) {
 			cout << output << endl;
