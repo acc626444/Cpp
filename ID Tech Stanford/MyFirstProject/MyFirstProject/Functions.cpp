@@ -1,4 +1,3 @@
-//#include "Functions.cpp"
 #include <iostream>
 using namespace std;
 void ab ( string input, string output ) {
@@ -14,11 +13,4 @@ void ab ( string input, string output ) {
 			cout << output << endl;
 		}
 	}
-}
-int main()
-{
-    string advice = "Be negative";
-    cout << "You want my advice\n";
-    string a;
-    cin >> a;
 }
