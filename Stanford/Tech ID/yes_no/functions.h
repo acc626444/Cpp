@@ -12,7 +12,6 @@ void ab( string input , string output ) {
 void error( string input , string output ) {
 	cout << "in error" << endl;
 	if ( input == "yes" || input == "no" ) {
-
 		cout << 2 << endl;
 		ab( input , output );
 	}
