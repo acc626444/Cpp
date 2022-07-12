@@ -1,27 +1,24 @@
 #include <iostream>
 using namespace std;
 void ab( string input , string output ) {
-	cout << "in ab" << endl;
 	if ( input == "yes" ) {
-		cout << output << endl;
+		cout << endl << output << endl;
 	}
 	else {
-		cout << "Too back. Here it is!\n";
+		cout << endl << "Too back. Here it is:\n";
+		cout << output << endl;
 	}
 }
 void error( string input , string output ) {
-	cout << "in error" << endl;
 	if ( input == "yes" ) {
-		cout << 344 << endl;
 		ab( input , output );
-	} else if ( input == "no" ) {
-		cout << 55 << endl;
+	}
+	else if ( input == "no" ) {
 		ab( input , output );
 	}
 	else {
-		cout << 3 << endl;
-		//exit( 1 );
 		cout << "Do you want advice\n";
+		string b;
 		cin >> b;
 		error( b , output );
 	}
