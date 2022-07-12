@@ -1,4 +1,4 @@
-#include "Header.h"
+#include "story.h"
 void main(){
     story( );
 }
