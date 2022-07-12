@@ -8,6 +8,8 @@ void skip( int a ) {
 }
 void getString( string input );
 void getString( string input ) {
+	cout << "in string";
+	skip( 5 );
 	cout << "Enter a string: ";
 	getline( cin , input );
 	cout << "normal string: " << input << endl;
@@ -15,14 +17,22 @@ void getString( string input ) {
 
 void getstring( string& input );
 void getstring( string& input ) {
+	cout << "in reference";
+	skip( 5 );
 	cout << "Enter a string: ";
 	getline( cin , input );
 	cout << "with reference " << input << endl;
 }
 
-void Getstring( string* input );
-void Getstring( string* input ) {
+void Getstring( string* pointer );
+void Getstring( string* pointer ) {
+	cout << "in pointer";
+	skip( 5 );
 	cout << "Enter a string: ";
-	getline( cin , input );
-	cout << "with pointer " << input << endl;
+	getline( cin , *pointer );
+
+	skip( 1 );
+	cout << "in function..." << endl;
+	cout << "pointer memory: " << pointer << endl;
+	cout << "pointer value: " << *pointer << endl;
 }
