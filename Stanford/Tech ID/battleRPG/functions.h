@@ -1,8 +1,10 @@
 #include <iostream>
 #include <string>
 using namespace std;
+void attack( bool game ) {
 
-int game() {
+}
+void game() {
   bool playGame = true;
 
   while (playGame == true) {
