@@ -20,9 +20,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="functions.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="declaration.h">
       <Filter>Source Files</Filter>
     </ClInclude>
