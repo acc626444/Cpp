@@ -1,5 +1,4 @@
 ﻿#include "declaration.h"
-using namespace std;
 void skip (int a){
 	for (int b = 0; b < a; b++){
 		cout << endl;
