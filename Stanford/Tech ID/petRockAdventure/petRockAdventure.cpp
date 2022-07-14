@@ -40,4 +40,6 @@ int main (){
 	this_thread::sleep_for (chrono::milliseconds (300));
 	delayScroll (100, 10);
 	cout << "To be continued..." << endl;
+
+	fightDecisions (petRock);
 }
