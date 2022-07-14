@@ -2,10 +2,10 @@
 int main (){
 	/********************************************************************
 	*
-	*						intro image
+	*						game image
 	*
 	********************************************************************/
-	srand (time (NULL));
+	//srand (time (NULL));
 	string playerName;
 	string intro =
 		"            _____         \n"
@@ -32,9 +32,12 @@ int main (){
 	cout << endl << "That's a great name!" << endl;
 	//creating pet rock
 	character* petRock = new player (playerName, "- Just a regular rock.");
+	petRock->setStats (1);
+	cout << petRock->name << " is a hearty rock with " << petRock->currentHealth << " health and a mighty attack that does " << petRock->damage << " damage!" << endl;
+	//game intro
 	cout << "It looks like " << playerName << " is ready for an adventure. ";
 	cout << "Time to go out and explore..." << endl;
 	this_thread::sleep_for (chrono::milliseconds (300));
 	delayScroll (100, 10);
-	cout << "To be countinued..." << endl;
+	cout << "To be continued..." << endl;
 }
