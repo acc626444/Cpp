@@ -32,7 +32,7 @@ void delayScroll (int delayInMs, int lineCount){
 character* generateEnemy (){
 	string name;
 	string describe;
-	int level{};
+	int level {};
 	random_device rd;
 	//enemy selects an item
 	int enemySelect = rd () % 3;
@@ -79,14 +79,76 @@ void encounterEnemy (character* player, character* enemy){
 		delayScroll (100, 10);
 	}
 }
-void decision (character* anEnemy, character* player){
-	int option = 0;
+/*void decision (character* anEnemy, character* player){
+	string option;
 	//decision
 	cout << "QUICK! MAKE A DECISION... \n1) Start a Fight \n2) Snaek Around \n3)Retreat \nENTER YOUR DICISION: ";
 	getline (cin, readline);
-	if (option == 1){
+	if (option.compare("1")){
 		//fight
 
+		cout << "You decided to start a fight, so here we go...\n";
+		encounterEnemy (player, anEnemy);
+	} else if (option.compare("2")){
+		//try to sneak
+		cout << "You decided to try to sneak around without getting caught.\n";
+		delayScroll (1500, 1);
+		random_device rd;
+		int survive = rd () % 2;
+		if (survive == 0){
+			cout << "LUCKY! You successfully snuck around the " << anEnemy->name << " this time. \nLet's continue on with the adventure...\n";
+			this_thread::sleep_for (chrono::milliseconds (2000));
+			delayScroll (100, 10);
+		} else{
+			cout << "AMBUSH! You were caught and knocked out by the " << anEnemy->name << "! \nHope you still had fun! You can always play again and try to survive longer.\n";
+		}
+	} else if (option.compare("3")){
+		//end game
+		cout << endl << "GAME OVER! Hope you still had fun!You can always play again and try to survive longer.\n";
+	} else{
+		decision (anEnemy, player);
+	}
+}
+void decision2 (character* anEnemy, character* player, int option){
+	//decision
+	cout << "QUICK! MAKE A DECISION... \n1) Start a Fight \n2) Snaek Around \n3)Retreat \nENTER YOUR DICISION: ";
+	cin >> option;
+	if (option==1){
+		//fight
+		cout << "You decided to start a fight, so here we go...\n";
+		encounterEnemy (player, anEnemy);
+	} else if (option==2){
+		//try to sneak
+		cout << "You decided to try to sneak around without getting caught.\n";
+		delayScroll (1500, 1);
+		random_device rd;
+		int survive = rd () % 2;
+		if (survive == 0){
+			cout << "LUCKY! You successfully snuck around the " << anEnemy->name << " this time. \nLet's continue on with the adventure...\n";
+			this_thread::sleep_for (chrono::milliseconds (2000));
+			delayScroll (100, 10);
+		} else{
+			cout << "AMBUSH! You were caught and knocked out by the " << anEnemy->name << "! \nHope you still had fun! You can always play again and try to survive longer.\n";
+		}
+	} else if (option==3){
+		//end game
+		cout << endl << "GAME OVER! Hope you still had fun!You can always play again and try to survive longer.\n";
+	} else{
+		decision2 (anEnemy, player, option);
+	}
+}*/
+void fightDecisions (character* player){
+	//describe encounter
+	character* anEnemy = generateEnemy ();
+	cout << "You encounter ";
+	anEnemy->describe ();
+	cout << "The " << anEnemy->name << " appears to have " << anEnemy->currentHealth << " health and an attack that does " << anEnemy->damage << " damage. Ouch! Remember: You have " << player->currentHealth << " health remaining.\n";
+	int option = 1;
+	//decision
+	cout << "QUICK! MAKE A DECISION... \n1) Start a Fight \n2) Snaek Around \n3)Retreat \nENTER YOUR DICISION: ";
+	cin >> option;
+	if (option == 1){
+		//fight
 		cout << "You decided to start a fight, so here we go...\n";
 		encounterEnemy (player, anEnemy);
 	} else if (option == 2){
@@ -102,18 +164,8 @@ void decision (character* anEnemy, character* player){
 		} else{
 			cout << "AMBUSH! You were caught and knocked out by the " << anEnemy->name << "! \nHope you still had fun! You can always play again and try to survive longer.\n";
 		}
-	} else if (option == 3){
+	} else {
 		//end game
 		cout << endl << "GAME OVER! Hope you still had fun!You can always play again and try to survive longer.\n";
-	} else{
-		decision (anEnemy, player);
 	}
-}
-void fightDecisions (character* player){
-	//describe encounter
-	character* anEnemy = generateEnemy ();
-	cout << "You encounter ";
-	anEnemy->describe ();
-	cout << "The " << anEnemy->name << " appears to have " << anEnemy->currentHealth << " health and an attack that does " << anEnemy->damage << " damage. Ouch! Remember: You have " << player->currentHealth << " health remaining.\n";
-	decision (anEnemy, player);
 }
