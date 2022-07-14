@@ -23,6 +23,12 @@ string readline;
 *										  |
 *										  |
 *****************************************************************************/
+void error (int n){
+	if (n != 1 || n !=2 size){
+		cout << "why" << endl;
+		exit (1);
+	}
+}
 void delayScroll (int delayInMs, int lineCount){
 	for (int i = 0; i < lineCount; i++){
 		cout << endl;
