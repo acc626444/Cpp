@@ -35,11 +35,10 @@ int main (){
 	petRock->setStats (1);
 	cout << petRock->name << " is a hearty rock with " << petRock->currentHealth << " health and a mighty attack that does " << petRock->damage << " damage!" << endl;
 	//game intro
-	cout << "It looks like " << playerName << " is ready for an adventure. ";
+	cout << "It looks like " << playerName << " is ready for an adventure.";
 	cout << "Time to go out and explore..." << endl;
-	this_thread::sleep_for (chrono::milliseconds (300));
+	this_thread::sleep_for (chrono::milliseconds (3000));
 	delayScroll (100, 10);
-	cout << "To be continued..." << endl;
+	fightDecisions(petRock);
 
-	fightDecisions (petRock);
 }
