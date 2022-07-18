@@ -1,10 +1,6 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/text.hpp>
-void sprite(sf::RenderWindow& window) {
-	
-
-}
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(800, 400), "Camra");
