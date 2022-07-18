@@ -2,8 +2,6 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/text.hpp>
 void sprite(sf::RenderWindow& window) {
-	//window of picture
-	sf::RenderWindow window(sf::VideoMode(400, 420), "Sprites!");
 	sf::Texture playerTex;
 	//picture
 	playerTex.loadFromFile("032fee086f77fb685e935b31a2d2e241.png");
@@ -81,7 +79,7 @@ void sprite(sf::RenderWindow& window) {
 		window.display();
 	}
 }
-void main()
+int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1600, 800), "Camra");
 	//Create Texture
@@ -92,7 +90,7 @@ void main()
 	backSprite.setTexture(backTxt);
 	//Camera View
 	sf::View camera(sf::Vector2f(50, 50), sf::Vector2f(150, 150));
-	camera.setSize(300, 400);
+	camera.setSize(1600, 800);
 	camera.setCenter(300, 400);
 	//while window is open
 	while (window.isOpen())
