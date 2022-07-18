@@ -1,12 +1,12 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include <SFML/Graphics/Text.hpp>
-
+#include <SFML/Graphics/text.hpp>
 void sprite(sf::RenderWindow& window) {
+	//window of picture
+	sf::RenderWindow window(sf::VideoMode(400, 420), "Sprites!");
 	sf::Texture playerTex;
-
 	//picture
-	playerTex.loadFromFile("OIP.jpg");
+	playerTex.loadFromFile("032fee086f77fb685e935b31a2d2e241.png");
 	sf::Sprite playerSprite;
 	//making picture a player
 	playerSprite.setTexture(playerTex);
@@ -76,43 +76,44 @@ void sprite(sf::RenderWindow& window) {
 			movement.x -= 0.1f;
 		}
 		playerSprite.move(movement);
+		window.clear();
 		window.draw(playerSprite);
 		window.display();
 	}
 }
-int main() {
-	sf::RenderWindow window(sf::VideoMode(1600, 800), "Camera");
+void main()
+{
+	sf::RenderWindow window(sf::VideoMode(1600, 800), "Camra");
 	//Create Texture
 	sf::Texture backTxt;
-	backTxt.loadFromFile("sphere.jpg");
-
-	//Create Sprite
+	backTxt.loadFromFile("Purple-Flare-PNG-Background-Image.png");
+	//Create sprite
 	sf::Sprite backSprite;
 	backSprite.setTexture(backTxt);
-
-	//Camera view
+	//Camera View
 	sf::View camera(sf::Vector2f(50, 50), sf::Vector2f(150, 150));
-	camera.setSize(1051, 800);
-	camera.setCenter(500, 400);
-
-	//while the window is open
-	while (window.isOpen()) {
+	camera.setSize(300, 400);
+	camera.setCenter(300, 400);
+	//while window is open
+	while (window.isOpen())
+	{
 		sf::Event event;
-		while (window.pollEvent(event)) {
-			//if the red X is pressed, close the window
+		while (window.pollEvent(event))
+		{//if the red X is pressed, close window
 			if (event.type == sf::Event::Closed) {
 				window.close();
 			}
 			window.clear();
-			//Draw Sprite to Window
+			//draw Texture to the window
 			window.draw(backSprite);
 			window.display();
 		}
+
 		window.setView(camera);
 		window.clear();
-		//Draw the sprite to the window
+		//draw the texture to the window
 		window.draw(backSprite);
 		window.display();
-		sprite(window);
 	}
+
 }
