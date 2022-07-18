@@ -2,9 +2,25 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/text.hpp>
 void sprite(sf::RenderWindow& window) {
+	
+
+}
+int main()
+{
+	sf::RenderWindow window(sf::VideoMode(800, 400), "Camra");
+	//Create Texture
+	sf::Texture backTxt;
+	backTxt.loadFromFile("Purple-Flare-PNG-Background-Image.png");
+	//Create sprite
+	sf::Sprite backSprite;
+	backSprite.setTexture(backTxt);
+	//Camera View
+	sf::View camera(sf::Vector2f(50, 50), sf::Vector2f(150, 150));
+	camera.setSize(1600, 1000);
+	camera.setCenter(400, 300);
 	sf::Texture playerTex;
 	//picture
-	playerTex.loadFromFile("032fee086f77fb685e935b31a2d2e241.png");
+	playerTex.loadFromFile("OIP.jpg");
 	sf::Sprite playerSprite;
 	//making picture a player
 	playerSprite.setTexture(playerTex);
@@ -24,7 +40,11 @@ void sprite(sf::RenderWindow& window) {
 			//if the red X is pressed, close the window
 			if (event.type == sf::Event::Closed) {
 				window.close();
-			}
+			}	
+			/*window.clear();
+			//draw Texture to the window
+			window.draw(backSprite);
+			window.display();*/
 			//if something is pressed
 			if (event.type == sf::Event::KeyPressed) {
 				//if up arrow is pressed, go up
@@ -73,44 +93,13 @@ void sprite(sf::RenderWindow& window) {
 		if (movingLeft) {
 			movement.x -= 0.1f;
 		}
-		playerSprite.move(movement);
-		window.clear();
-		window.draw(playerSprite);
-		window.display();
-	}
-}
-int main()
-{
-	sf::RenderWindow window(sf::VideoMode(1600, 800), "Camra");
-	//Create Texture
-	sf::Texture backTxt;
-	backTxt.loadFromFile("Purple-Flare-PNG-Background-Image.png");
-	//Create sprite
-	sf::Sprite backSprite;
-	backSprite.setTexture(backTxt);
-	//Camera View
-	sf::View camera(sf::Vector2f(50, 50), sf::Vector2f(150, 150));
-	camera.setSize(1600, 800);
-	camera.setCenter(300, 400);
-	//while window is open
-	while (window.isOpen())
-	{
-		sf::Event event;
-		while (window.pollEvent(event))
-		{//if the red X is pressed, close window
-			if (event.type == sf::Event::Closed) {
-				window.close();
-			}
-			window.clear();
-			//draw Texture to the window
-			window.draw(backSprite);
-			window.display();
-		}
 
 		window.setView(camera);
 		window.clear();
 		//draw the texture to the window
 		window.draw(backSprite);
+		playerSprite.move(movement);
+		window.draw(playerSprite);
 		window.display();
 	}
 
