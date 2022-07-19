@@ -1,60 +1,81 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Rect.hpp>
 #include<SFML/Graphics/Text.hpp>
+#include "Hand.h"
+#include <time.h>
 
-int main()
-{
-	// Create a Window to Display Graphics, Define Size and Window Name
-	sf::RenderWindow window(sf::VideoMode(200, 200), "Animation");
+int main (){
+	srand (time (0));
+	bool start = true;
+	Deck d;
+	d.shuffle ();
+	Hand name (&d);
+	Hand name2 (&d);
+	//player 1's turn
+	cout << "player 1" << endl;
+	while(start && name.handValue () < 21){
+		name.printHand ();
+		cout << "hit or stay" << endl;
+		string a;
+		cin >> a;
+		if(a == "hit"){
+			name.draw ();
 
-	/* CREATE OBJECTS AND ASSIGN OBJECT ATTRIBUTES HERE */
-	sf::Texture myTexture;
-	myTexture.loadFromFile("walk_cycle.png");
-	sf::IntRect rect[7];
-	rect[0] = sf::IntRect(0, 0, 64, 64);
-	rect[1] = sf::IntRect(64, 0, 64, 64);
-	rect[2] = sf::IntRect(128, 0, 64, 64);
-	rect[3] = sf::IntRect(192, 0, 64, 64);
-	rect[4] = sf::IntRect(0, 64, 64, 64);
-	rect[5] = sf::IntRect(64, 64, 64, 64);
-	rect[6] = sf::IntRect(128, 64, 64, 64);
-	sf::Sprite mySprite;
-	mySprite.setTexture(myTexture);
-	mySprite.setOrigin(15, 16);
-	mySprite.setScale(1.5, 1.5);
-	mySprite.setPosition(100, 100);
-	sf::Clock clock;
-	int imgCount = 0;
-	float timer = 0;
-	// Run the Program while the Window is Open
-	while (window.isOpen())
-	{
-		sf::Event event;
-		while (window.pollEvent(event))
-		{
-			// When X Button Clicked, Close Window
-			if (event.type == sf::Event::Closed)
-				window.close();
-
-			/* DEFINE EVENTS (i.e. KEY PRESS & RELEASE) HERE */
 		}
-		//give sprite texture of rect[imgCount]
-		mySprite.setTextureRect(rect[imgCount]);
-		//set timer in seconds
-		timer = clock.getElapsedTime().asSeconds();
-		if (timer > 0.1f) {
-			if (imgCount < 6) {
-				imgCount++;
-			}
-			else {
-				imgCount = 0;
-			}
-			clock.restart();
+		else if(a == "stay"){//thtsmytmyut
+			start = false;
 		}
-
-		window.clear();
-		/* DRAW OBJECTS HERE */
-		window.draw(mySprite);
-		window.display();
+		else{
+			cout << "try again" << endl;//ererre
+		}
+	}
+	//lose
+	if(name.handValue () > 21){
+		name.printHand ();
+		cout << endl;
+		cout << "BUSTED!!!" << endl;
+	}
+	//won
+	if(name.handValue () == 21){
+		cout << "BLACK JACK!!" << endl;
+	}
+	cout << endl;
+	cout << endl;
+	cout << "dealer" << endl;
+	bool start2 = true;
+	//player 2's turn
+	while(start2 && name2.handValue () < 21){
+		name2.printHand ();
+		if(name2.handValue () < 17){
+			cout << endl;
+			cout << endl;
+			name2.draw ();
+		}
+		else{
+			start2 = false;
+		}
+	}
+	//lose
+	if(name2.handValue () > 21){
+		name2.printHand ();
+		cout << endl;
+		cout << "BUSTED!!!" << endl;
+	}
+	//win
+	if(name2.handValue () == 21){
+		cout << "BLACK JACK!!" << endl;
+	}
+	//who wins
+	if(name.handValue () <= 21 && name2.handValue () > 21 || name.handValue () <= 21 && name2.handValue () > 21){
+		cout << "player 1 wins!!" << endl;
+	}
+	else if(name2.handValue () > name.handValue () || name.handValue () > 21 || name.handValue () > 21 && name2.handValue () > 21){
+		cout << "Dealer wins!!!" << endl;
+	}
+	else if(name.handValue () > name2.handValue ()){
+		cout << "Player 1 wins!!" << endl;
+	}
+	else{
+		cout << "tie" << endl;
 	}
 }

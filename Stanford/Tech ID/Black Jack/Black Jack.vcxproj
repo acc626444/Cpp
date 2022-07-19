@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{67564239-bb76-4213-b10b-b83a5d7fbdbc}</ProjectGuid>
-    <RootNamespace>Animations</RootNamespace>
+    <ProjectGuid>{a4b5b5d2-ae0b-4500-aab3-729dfb87d36f}</ProjectGuid>
+    <RootNamespace>Black_Jack</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -134,16 +134,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Card.cpp" />
-    <ClCompile Include="Deck.cpp" />
-    <ClCompile Include="Hand.cpp" />
+    <ClCompile Include="chips.cpp" />
+    <ClCompile Include="deck.cpp" />
+    <ClCompile Include="hand.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Card.h" />
-    <ClInclude Include="Deck.h" />
-    <ClInclude Include="Hand.h" />
-    <ClInclude Include="Player.h" />
+    <ClInclude Include="chips.h" />
+    <ClInclude Include="deck.h" />
+    <ClInclude Include="hand.h" />
+    <ClInclude Include="player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

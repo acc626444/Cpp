@@ -1,5 +1,3 @@
-#include "Card.h"
-#include "Deck.h"
 #include "card_hands.h"
 #include <time.h>
 int main() {
