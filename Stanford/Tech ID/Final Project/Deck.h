@@ -6,7 +6,7 @@ class Deck{
 	int c;
 	public:
 	Deck ();
-	void printDeck ();
+	void printDeck (sf::RenderWindow& w);
 	void Shuffle ();
 	Card Draw ();
 };

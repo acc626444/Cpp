@@ -1,3 +1,4 @@
+#pragma once
 #include "Deck.h"
 
 Deck::Deck (){
@@ -12,9 +13,9 @@ Deck::Deck (){
 	}
 }
 
-void Deck::printDeck (){
+void Deck::printDeck (sf::RenderWindow &w){
 	for(int deck = 0; deck < 52; deck++){
-		cards[deck].printCard ();
+		cards[deck].printCard (w);
 	}
 }
 

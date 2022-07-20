@@ -18,6 +18,13 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="EndConditions.h" />
+    <ClInclude Include="Players.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -132,14 +139,6 @@
       <AdditionalDependencies>$(CoreLibraryDependencies);%(AddistionalDependencies);sfml-audio.lib;sfml-graphics.lib;sfml-network.lib;sfml-system.lib;sfml-window.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Card.cpp" />
-    <ClCompile Include="Main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Card.h" />
-    <ClInclude Include="SFML_stuff.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

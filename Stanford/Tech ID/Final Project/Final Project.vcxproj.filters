@@ -18,16 +18,13 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Card.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Card.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Players.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="SFML_stuff.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="EndConditions.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

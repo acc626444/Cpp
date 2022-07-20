@@ -6,7 +6,7 @@ class Hand{
 	Deck* fromdeck;
 	public:
 	Hand (Deck* d);
-	void printHand ();
+	void printHand (sf::RenderWindow& w);
 	void Draw ();
 	int handValue ();
 

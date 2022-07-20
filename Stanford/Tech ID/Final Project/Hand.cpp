@@ -1,3 +1,4 @@
+#pragma once
 #include "Hand.h"
 /*************************************************************************
 *										NOTES
@@ -33,9 +34,9 @@ Hand::Hand (Deck* d){
 	inHand.push_back ((*fromdeck).Draw ());
 }
 
-void Hand::printHand (){
+void Hand::printHand (sf::RenderWindow& w){
 	for(int playcards = 0; playcards < inHand.size (); playcards++){
-		inHand.operator[](playcards).printCard ();
+		inHand.operator[](playcards).printCard (w);
 	}
 }
 

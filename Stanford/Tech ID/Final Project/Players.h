@@ -1,9 +1,14 @@
 #pragma once
 #include "EndConditions.h"
-void player1 (Hand p1, bool start){
-	cout << "player 1" << endl;
+sf::Font font;
+sf::Text player;
+void player1 (Hand p1, bool start, sf::RenderWindow& w){
+	font.loadFromFile ("DEATH.ttf");
+	player.setString ("Player 1");
+	w.display ();
 	while(start && p1.handValue () < 21){
-		p1.printHand ();
+		p1.printHand (w);
+		w.display ();
 		cout << "hit or stay" << endl;
 		string a;
 		cin >> a;
@@ -20,7 +25,7 @@ void player1 (Hand p1, bool start){
 	}
 	//lost
 	if(p1.handValue () > 21){
-		p1.printHand ();
+		p1.printHand (w);
 		cout << endl;
 		cout << "BUSTED!!!" << endl;
 	}
@@ -29,10 +34,14 @@ void player1 (Hand p1, bool start){
 		cout << "BLACK JACK!!" << endl;
 	}
 }
-void dealer (Hand dealer, bool start){
-	cout << "dealer" << endl;
+void dealer (Hand dealer, bool start, sf::RenderWindow& w){
+	font.loadFromFile ("DEATH.ttf");
+	player.setString ("Dealer");
+	w.draw (player);
+	w.display ();
 	while(start && dealer.handValue () < 21){
-		dealer.printHand ();
+		dealer.printHand (w);
+		w.display ();
 		cout << "hit or stay" << endl;
 		string a;
 		cin >> a;
@@ -49,7 +58,7 @@ void dealer (Hand dealer, bool start){
 	}
 	//lost
 	if(dealer.handValue () > 21){
-		dealer.printHand ();
+		dealer.printHand (w);
 		cout << endl;
 		cout << "BUSTED!!!" << endl;
 	}
