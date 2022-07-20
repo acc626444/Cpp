@@ -1,4 +1,4 @@
-#include "/Users/alexc/source/repos/acc626444/Cpp/Stanford/Tech ID/Final Project"
+#include "C:/Users/alexc/source/repos/acc626444/Cpp/Stanford/Tech ID/Final Project/Card.h"
 #include <SFML/Graphics.hpp>
 #include "SFML/Graphics/Text.hpp"
 using namespace std;
