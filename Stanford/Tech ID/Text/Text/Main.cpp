@@ -7,16 +7,27 @@ int main()
     sf::Font myFont;
     myFont.loadFromFile("Texture/Font/Candal.ttf");
     sf::Text myText;
+    sf::Text q;
+    sf::Text r;
     sf::Text txt;
     myText.setFont (myFont);
+    r.setFont (myFont);
+    q.setFont (myFont);
     txt.setFont(myFont);
     int a = 77;
+    q.setString ("points");
+    r.setString (to_string (a));
     myText.setString (to_string (a));
     txt.setString("hi");
-    txt.setPosition (-50, 0); 
+    q.setPosition (0, 50);
+    r.setPosition (125, 50);
+    txt.setPosition (-50, 0);
     myText.setCharacterSize(24);
     myText.setFillColor (sf::Color::White);
+    q.setFillColor (sf::Color::Green);
+    r.setFillColor (sf::Color::Green);
     txt.setFillColor(sf::Color::White);
+
 
     while (window.isOpen())
     {
@@ -34,6 +45,8 @@ int main()
             txt.setPosition (-200, 0);
 
         window.clear();
+        window.draw (q);
+        window.draw (r);
         window.draw (myText);
         window.draw(txt);
         window.display();
