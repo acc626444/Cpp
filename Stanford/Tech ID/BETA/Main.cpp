@@ -1,22 +1,10 @@
-#include "Card.h"
+#include "/Users/alexc/source/repos/acc626444/Cpp/Stanford/Tech ID/Final Project"
+#include <SFML/Graphics.hpp>
+#include "SFML/Graphics/Text.hpp"
+using namespace std;
 
-Card::Card (int v, string s){
-	suit = s;
-	value = v;
-
-}
-Card::Card (){
-	suit = "";
-	value = 0;
-}
-int Card::getValue (){
-	return value;
-}
-string Card::getSuit (){
-	return suit;
-
-}
-void Card::printCard (sf::RenderWindow &window, sf::Text txt){
+int main()
+{
 	//if Jack, print Jack of 'suit'
 	int val = value;
 	string suit = getSuit ();
@@ -27,8 +15,8 @@ void Card::printCard (sf::RenderWindow &window, sf::Text txt){
 	_val_.setFont (font);
 	_suit_.setFont (font);
 	if(value == 11){
-		other.getString ("the J of");
-		_suit_.setString (suit);
+		//other.getString ("the J of");
+		//_suit_.setString (suit);
 
 		cout << "the " << "J" << " " << "of " << getSuit () << "s" << endl;
 	}
@@ -48,4 +36,10 @@ void Card::printCard (sf::RenderWindow &window, sf::Text txt){
 	else{
 		cout << "the " << getValue () << " " << "of " << getSuit () << "s" << endl;
 	}
+    }
+
+    return 0;
 }
+/*
+
+*/
