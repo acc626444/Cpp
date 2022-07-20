@@ -16,7 +16,7 @@ string Card::getSuit (){
 	return suit;
 
 }
-void Card::printCard (){
+void Card::printCard (sf::RenderWindow &window, sf::Text txt){
 	//if Jack, print Jack of 'suit'
 	if(value == 11){
 		cout << "the " << "J" << " " << "of " << getSuit () << "s" << endl;

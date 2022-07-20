@@ -2,6 +2,7 @@
 #include<iostream>
 #include<vector>
 #include<stdlib.h>
+#include <SFML/Graphics.hpp>
 using namespace std;
 class Card{
 	private:
@@ -12,6 +13,6 @@ class Card{
 	Card ();
 	int getValue ();
 	string getSuit ();
-	void printCard ();
+	void printCard (sf::RenderWindow& window, sf::Text txt);
 };
 
