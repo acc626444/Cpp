@@ -13,7 +13,7 @@ int main()
     int a = 77;
     myText.setString (to_string (a));
     txt.setString("hi");
-    txt.setPosition (-50, 0);
+    txt.setPosition (-50, 0); 
     myText.setCharacterSize(24);
     myText.setFillColor (sf::Color::White);
     txt.setFillColor(sf::Color::White);
