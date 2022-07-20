@@ -16,19 +16,11 @@ string Card::getSuit (){
 	return suit;
 
 }
-void Card::printCard (sf::RenderWindow &window, sf::Text txt){
+void Card::printCard (){
 	//if Jack, print Jack of 'suit'
-	int val = value;
-	string suit = getSuit ();
-	font.loadFromFile ("DEATH.ttf");
-	other.setFont (font);
-	other1.setFont (font);
-	other2.setFont (font);
-	_val_.setFont (font);
-	_suit_.setFont (font);
 	if(value == 11){
-		other.getString ("the J of");
-		_suit_.setString (suit);
+		//other.getString ("the J of");
+		//_suit_.setString (suit);
 
 		cout << "the " << "J" << " " << "of " << getSuit () << "s" << endl;
 	}

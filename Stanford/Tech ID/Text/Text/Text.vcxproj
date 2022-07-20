@@ -135,10 +135,6 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Final Project\Card.h" />
-    <ClInclude Include="SFML_stuff.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
