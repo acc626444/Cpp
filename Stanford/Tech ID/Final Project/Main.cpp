@@ -1,6 +1,6 @@
 #include "EndConditions.h"
 int main (){
-	sf::RenderWindow window (sf::VideoMode (1600, 800), "Black Jack!");
+	/*sf::RenderWindow window (sf::VideoMode (1600, 800), "Black Jack!");
 	srand (time (0));
 	bool start = true;
 	Deck d;
@@ -12,6 +12,6 @@ int main (){
 	cout << endl;
 	bool start2 = true;
 	dealer (name2, start2, window);
-	EndCondition (name, name2, window);
+	EndCondition (name, name2, window);*/
 	return 0;
 }

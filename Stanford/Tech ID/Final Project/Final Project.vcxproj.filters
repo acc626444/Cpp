@@ -26,5 +26,8 @@
     <ClInclude Include="Players.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="makeButton.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
