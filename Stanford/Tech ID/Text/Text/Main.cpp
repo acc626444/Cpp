@@ -3,7 +3,7 @@
 using namespace std;
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(400, 400), "Text");
+    sf::RenderWindow window(sf::VideoMode(1600, 800), "Text");
     sf::Font myFont;
     myFont.loadFromFile("Texture/Font/Candal.ttf");
     sf::Text myText;
@@ -26,7 +26,7 @@ int main()
     myText.setFillColor (sf::Color::White);
     q.setFillColor (sf::Color::Green);
     r.setFillColor (sf::Color::Green);
-    txt.setFillColor(sf::Color::White);
+    txt.setFillColor (sf::Color::White);
 
 
     while (window.isOpen())

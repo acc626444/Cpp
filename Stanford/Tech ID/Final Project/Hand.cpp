@@ -1,33 +1,33 @@
 #pragma once
 #include "Hand.h"
-/*************************************************************************
-*										NOTES
-*			CODE						  |						MEANING
-*_________________________________________|________________________________
-* 1)			 .push_back				  |			It is used for pushing
-*										  |			elements from the back
-*										  |			of the vector
-*										  |
-* ex.									  |			takes what's in_hand
-										  |				and puts it at
-*in_hand.push_back ((*from_deck).Draw ());|			the bottom of the deck
-*										  |
-*										  |
-*_________________________________________|________________________________
-*										  |
-*										  |			take an argument that
-*										  |			is a reference to a
-* 2)			 .operator[]			  |	function object and an argument
-*										  |	that is a null pointer constant
-*										  |
-* ex.									  |
-*										  |
-*	inHand.operator[](a).printCard ();	  |			takes what's in_hand
-*										  |				and puts it at
-*										  |			the bottom of the deck
-*										  |
-*										  |
-*************************************************************************/
+/*************************************************************************|
+*										NOTES							  |
+* ________________________________________________________________________|
+*			CODE						  |						MEANING	  |
+*_________________________________________|_______________________________|
+* 1)			 .push_back				  |			It is used for pushing|
+*										  |			elements from the back|
+*										  |			of the vector		  |
+*										  |								  |
+* ex.									  |			takes what's in_hand  |
+										  |				and puts it at    |
+*in_hand.push_back ((*from_deck).Draw ());|			the bottom of the deck|
+*										  |								  |
+*										  |								  |
+*_________________________________________|_______________________________|
+*										  |								  |
+*										  |			take an argument that |
+*										  |			is a reference to a	  |
+* 2)			 .operator[]			  |function object and an argument|
+*										  |that is a null pointer constant|
+*										  |								  |
+* ex.									  |								  |
+*										  |								  |
+*		inHand.operator[]				  |			for every card printed|
+*	(playcards).printCard();			  |				and the to hand	  |
+*										  |			   in index of place  |
+*										  |								  |
+**************************************************************************/
 
 Hand::Hand (Deck* d){
 	fromdeck = d;
@@ -35,8 +35,9 @@ Hand::Hand (Deck* d){
 }
 
 void Hand::printHand (sf::RenderWindow& w){
-	for(int playcards = 0; playcards < inHand.size (); playcards++){
-		inHand.operator[](playcards).printCard (w);
+	for(int place = 0; place < inHand.size (); place++){
+		inHand.operator[](place).printCard (w, place);
+		
 	}
 }
 

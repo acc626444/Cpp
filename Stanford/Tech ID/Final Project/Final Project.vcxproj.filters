@@ -20,10 +20,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Players.h">
+    <ClInclude Include="EndConditions.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="EndConditions.h">
+    <ClInclude Include="Players.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

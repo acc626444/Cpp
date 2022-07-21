@@ -1,9 +1,9 @@
 #pragma once
-#include "Hand.cpp"
+#include "Players.h"
 
-void EndCondition (Hand p1, Hand p2, sf::RenderWindow& w){
+void  EndCondition (Hand p1, Hand p2, sf::RenderWindow& w){
 	sf::Font font;
-	font.loadFromFile ("DEATH.ttf");
+	font.loadFromFile ("summer-vibes-font/SummerVibes-JR0aK.ttf");
 	sf::Text player;
 	//Player 1 wins
 	if(p1.handValue () <= 21 && p2.handValue () > 21 || p1.handValue () <= 21 && p2.handValue () > 21){

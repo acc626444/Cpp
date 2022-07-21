@@ -1,6 +1,4 @@
-#include "Players.h"
-
-
+#include "EndConditions.h"
 int main (){
 	sf::RenderWindow window (sf::VideoMode (1600, 800), "Black Jack!");
 	srand (time (0));

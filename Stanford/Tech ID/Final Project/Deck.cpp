@@ -15,7 +15,7 @@ Deck::Deck (){
 
 void Deck::printDeck (sf::RenderWindow &w){
 	for(int deck = 0; deck < 52; deck++){
-		cards[deck].printCard (w);
+		cards[deck].printCard (w, deck);
 	}
 }
 

@@ -1,5 +1,4 @@
-#include "card_hands.h"
-#include <time.h>
+#include "card_hands.cpp"
 int main() {
 	srand(time(0));
 	bool start = true;

@@ -1,7 +1,7 @@
+#pragma once
 #include "card_hands.h"
 card_hands::card_hands(Deck *d) {
 	from_deck = d;
-	in_hand.push_back((*from_deck).draw());
 	in_hand.push_back((*from_deck).draw());
 }
 void card_hands::print_hand() {
