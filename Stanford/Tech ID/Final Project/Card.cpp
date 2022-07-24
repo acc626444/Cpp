@@ -17,7 +17,7 @@ string Card::getSuit (){
 	return suit;
 
 }
-void Card::printCard (sf::RenderWindow& w, int positionX){
+void Card::printCard (sf::RenderWindow& w, float positionX){
 	switch(getValue()){
 		//if Jack, print Jack of 'suit'
 		case 11:

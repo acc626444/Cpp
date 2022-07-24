@@ -17,6 +17,6 @@ class Card{
 	Card ();
 	int getValue ();
 	string getSuit ();
-	void printCard (sf::RenderWindow &w, int positionX);
+	void printCard (sf::RenderWindow &w, float positionX);
 };
 

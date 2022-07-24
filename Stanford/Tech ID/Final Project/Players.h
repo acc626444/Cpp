@@ -37,63 +37,24 @@ bool stay = false;
 //			cout << "try again" << endl;
 //		}
 //	}
-//		//lost
-//		if(p1.handValue () > 21){
-//			cout << endl;
-//			cout << "BUSTED!!!" << endl;
-//			w.clear ();
-//		}
-//		//win
-//		if(p1.handValue () == 21){
-//			p1.printHand (w);
-//			w.display ();
-//			cout << "BLACK JACK!!" << endl;
-//			w.clear ();
-//		}
-//		//if(event.type == sf::Event::KeyPressed){
-//		//	//if up arrow is pressed, go up
-//		//	if(event.key.code == sf::Keyboard::Up){
-//		//		hit = true;
-//		//		cout << "hit run" << endl;
-//		//	}
-//		//	//if down arrow is pressed, go down
-//		//	if(event.key.code == sf::Keyboard::Down){
-//		//		stay = true;
-//		//		cout << "stay run" << endl;
-//		//		//if right arrow is pressed, go right
-//		//	}
-//		//}
-//		//if(event.type == sf::Event::KeyReleased){
-//		//	//if up arrow is pressed, go up
-//		//	if(event.key.code == sf::Keyboard::Up){
-//		//		hit = false;
-//		//		cout << "hit fail" << endl;
-//		//	}
-//		//	//		//if down arrow is pressed, go down
-//		//	if(event.key.code == sf::Keyboard::Down){
-//		//		stay = false;
-//		//		cout << "stay fail" << endl;
-//		//	}
-//		//if(hit){
-//		//	p1.Draw ();
-//		//	erase++;
-//		//	cout << "hit" << endl;
-//		//}
-//		//if(stay){
-//		//	start = false;
-//		//	for(int cards = 0; cards < erase; cards++){
-//		//		w.clear ();
-//		//	}
-//		//	cout << "stay" << endl;
-//		//}
-//		//w.draw (player);
-//		//w.display ();
-//	
+//	//lost
+//	if(p1.handValue () > 21){
+//		cout << endl;
+//		cout << "BUSTED!!!" << endl;
+//		w.clear ();
+//	}
+//	//win
+//	if(p1.handValue () == 21){
+//		p1.printHand (w);
+//		w.display ();
+//		cout << "BLACK JACK!!" << endl;
+//		w.clear ();
+//	}
 //}
 
 
-void player1 (Hand p1, bool start, sf::RenderWindow& w){
-	int erase = 1;
+void player1 (Hand p1, bool start, sf::RenderWindow& w, /*sf::Event event,*/ int erase){
+	sf::Event event{};
 	font.loadFromFile ("japanese-style-font/JapaneseStyle-rmX7.ttf");
 	player.setFont (font);
 	player.setString ("Player 1");
@@ -102,6 +63,7 @@ void player1 (Hand p1, bool start, sf::RenderWindow& w){
 	sf::Color pinkish (255, 25, 255);
 	player.setFillColor (pinkish);
 	w.draw (player);
+	w.display ();
 	while(start && p1.handValue () < 21){
 		p1.printHand (w);
 		w.draw (player);
@@ -109,41 +71,61 @@ void player1 (Hand p1, bool start, sf::RenderWindow& w){
 		Hit (w);
 		Stay (w);
 		w.display ();
-		////if the red X is pressed, close the window
-		//if(event.type == sf::Event::Closed){
-		//	w.close ();
-		//}
 		//if(event.type == sf::Event::MouseButtonPressed){
-		//	if(event.key.code == sf::Mouse::Right && sf::Mouse::getPosition ().x == 10 && sf::Mouse::getPosition ().y == 740){
-		//		hit = true;
-		//		p1.Draw ();
-		//		erase++;
+		//	switch(event.mouseButton.button = sf::Mouse::Left){
+		//		//hit
+		//		case /*width*/sf::Mouse::getPosition ().x > 0 || sf::Mouse::getPosition ().x < 500 && /*length*/ sf::Mouse::getPosition ().y > 750 || sf::Mouse::getPosition ().y < 800 :
+		//			hit = true;
+		//			break;
+		//			//	//stay
+		//			case /*width*/sf::Mouse::getPosition ().x > 1465 || sf::Mouse::getPosition ().x < 1600 && /*length*/ sf::Mouse::getPosition ().y > 750 || sf::Mouse::getPosition ().y < 800 :
+		//				stay = true;
+		//				break;
 		//	}
-		//	if(event.key.code == sf::Mouse::Right && sf::Mouse::getPosition ().x == 1470 && sf::Mouse::getPosition ().y == 740){
-		//		stay = true;
-		//		start = false;
-		//		for(int cards = 0; cards < erase; cards++){
-		//			w.clear ();
-		//		}
+		//}
+		 
+		 
+		//if(event.type == sf::Event::MouseButtonReleased){
+		//	switch(event.mouseButton.button = sf::Mouse::Left){
+		//		//	//if up arrow is pressed, go up
+		//		case /*width*/sf::Mouse::getPosition ().x > 0 || sf::Mouse::getPosition ().x < 500 && /*length*/ sf::Mouse::getPosition ().y > 750 || sf::Mouse::getPosition ().y < 800:
+		//			hit = false;
+		//			cout << "hit false" << endl;
+		//			break;
+		//			//	//stay
+		//			case /*width*/sf::Mouse::getPosition ().x > 1465 || sf::Mouse::getPosition ().x < 1600 && /*length*/ sf::Mouse::getPosition ().y > 750 || sf::Mouse::getPosition ().y < 800 :
+		//				stay = false;
+		//				cout << "stay false" << endl;
+		//				break;
 		//	}
-			cout << "hit or stay" << endl;
-			string a;
-			cin >> a;
-			if(a == "hit"){
-				p1.Draw ();
-				erase++;
-			}
-			else if(a == "stay"){
-				start = false;
-				for(int cards = 0; cards < erase; cards++){
-					w.clear ();
-				}
-			}
-			else{
-				cout << "try again" << endl;
-			}
-		
+		//}
+
+
+
+		//if(hit){
+		//	p1.Draw ();
+		//	cout << "hit true" << endl;
+		//	player1 (p1, start, w, erase);
+		//}
+		//if(stay){
+		//	start = false;
+		//	for(int cards = 0; cards < erase; cards++){
+		//		w.clear ();
+		//	}
+		//	cout << "stay true" << endl;
+		//}
 	}
+
+	/*if(event.key.code == sf::Keyboard::Up){
+		hit = false;
+		cout << "hit fail" << endl;
+	}
+
+	if(event.key.code == sf::Keyboard::Down){
+		stay = false;
+		cout << "stay fail" << endl;
+	}*/
+
 	//lost
 	if(p1.handValue () > 21){
 		cout << endl;
@@ -157,6 +139,8 @@ void player1 (Hand p1, bool start, sf::RenderWindow& w){
 		cout << "BLACK JACK!!" << endl;
 	}
 	w.clear ();
+
+
 }
 
 
