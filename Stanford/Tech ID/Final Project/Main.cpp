@@ -4,7 +4,7 @@ int main (){
 	srand (time (0));
 	bool start = true;
 	Deck d;
-	d.Shuffle ();
+	d.Shuffle();
 	Hand name (&d);
 	Hand name2 (&d);
 	int erase = 1;
