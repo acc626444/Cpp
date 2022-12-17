@@ -20,6 +20,7 @@ bool start_column_check(int q) {
 	return false;
 }
 void print_board() {
+	cout << endl;
 	for (int a = 0; a < 8; a++) {
 		for (int b = 0; b < 8; b++) {
 			cout << g[b][a];
@@ -160,7 +161,6 @@ bool puzzle() {
 				q++;
 			}
 			else {
-
 				print_board(); // skip column with O going backwards//
 
 				if (g[q][ads[q]] == "O ") {
@@ -186,15 +186,16 @@ bool puzzle() {
 			q++;
 		}
 		print_board();
-		cout << "congrates!!!" << endl;
-		return true;
+		
 	}
+	cout << "congrates!!!" << endl;
+	return true;
 }
 
 int main() {
 	make_board(); 
 	make_board();
-	int a;
+	/*int a;
 	cout << "How many queens do you want to start with?" << endl;
 	cin >> a;
 	if (a>0){
@@ -220,6 +221,7 @@ int main() {
 	else {
 		cout << "invalide character" << endl;
 		exit(1);
-	}
+	}*/
+	puzzle();
 	return 0;
 }
