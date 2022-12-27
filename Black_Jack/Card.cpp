@@ -1,4 +1,4 @@
-#pragma once
+
 #include "Card.h"
 Card::Card(int v, string s) {
 	suit = s;

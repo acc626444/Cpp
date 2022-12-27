@@ -1,4 +1,3 @@
-#pragma once
 #include "Deck.h"
 Deck::Deck() {
 	c = 0;

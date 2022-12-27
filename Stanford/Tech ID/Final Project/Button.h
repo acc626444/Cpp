@@ -28,9 +28,9 @@ public:
 
 	void position(sf::Vector2f pos) {
 		button.setPosition(pos);
-		float x = ((pos.x + button.getGlobalBounds().width / 2) - (text.getGlobalBounds().width / 2));
-		float y = ((pos.y + button.getGlobalBounds().height / 2) - (text.getGlobalBounds().height / 2));
-		text.setPosition({x, y});
+		float X = ((pos.x + button.getLocalBounds().width / 2) - (text.getGlobalBounds().width / 2));
+		float Y = ((pos.y + button.getLocalBounds().height / 2) - (text.getGlobalBounds().height / 2));
+		text.setPosition({X, Y});
 	}
 
 	void drawTo(sf::RenderWindow& window) {
@@ -39,8 +39,13 @@ public:
 	}
 
 	bool mouseOver(sf::RenderWindow& window) {
-		int mouseX = sf::Mouse::getPosition(window).x;
+		float mouseX = sf::Mouse::getPosition(window).x;
+		float mouseY = sf::Mouse::getPosition(window).y;
 
+		float X = button.getPosition().x;
+		float Y = button.getPosition().y;
+
+		float X_Width = 
 	}
 private:
 	sf::RectangleShape button;

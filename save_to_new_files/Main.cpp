@@ -1,10 +1,10 @@
-
+#pragma warning
 #include <iostream>
 #include <string>
 #include <fstream>
 #include "text.txt"
-//puts 0s 
-using namespace std;
+//puts 0s
+; using namespace std;
 int add_0(int a, int b) {
 	int q = a;
 	for(int c = 0; c<b; c++){
@@ -13,7 +13,7 @@ int add_0(int a, int b) {
 	return q;
 }
 
-// string to int
+// string to integer
 int convert_digits(string a) { 
 	int as = a.size();
 	int q;
@@ -28,7 +28,7 @@ int convert_digits(string a) {
 }
 int main(){
 	//print from file
-	/*ifstream name("Text.txt");
+	ifstream name("Text.txt");
 	string a="";
 	if (!name.is_open()) {
 		cout << "file not found" << endl;
@@ -40,19 +40,18 @@ int main(){
 		a = a + line +"\n";
 	}
 	name.close();
-	*/
-
+	
 	//print to file
-	/*ofstream file("Text.txt");
+	ofstream file("Text.txt");
 	if (!file.is_open()) {
 		cout << "file not found" << endl;
 		exit(1);
 	}
 	file << a + "shrhtnszvewgs" << endl;
-	file.close();*/
+	file.close();
 
 	// side stuff
-	/*ifstream aname("Text.txt");
+	ifstream aname("Text.txt");
 	string weer = "";
 	if (!aname.is_open()) {
 		cout << "file not found" << endl;
@@ -63,7 +62,7 @@ int main(){
 		cout << line << endl;
 		weer = weer + aline + "\n";
 	}
-	aname.close();*/
+	aname.close();
 
 	//save file
 	convert_digits(line);

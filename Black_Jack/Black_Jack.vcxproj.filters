@@ -18,25 +18,5 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Card.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Deck.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="card_hands.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Card.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Deck.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="card_hands.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
