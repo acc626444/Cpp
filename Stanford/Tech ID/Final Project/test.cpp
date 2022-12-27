@@ -37,3 +37,10 @@
 //		window.display ();
 //	}
 //}
+#include <SFML/Graphics/Text.hpp>
+#include <iostream>
+#include "Button.h"
+int main (){
+	Button btn1("Click me", (200, 50), 20, sf::Color::Green, sf::Color::Black);
+	
+}
