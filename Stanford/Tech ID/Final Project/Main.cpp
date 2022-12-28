@@ -1,3 +1,5 @@
+#pragma warning(disable : 4996)
+
 #include "EndConditions.h"
 int main (){
 	sf::RenderWindow window (sf::VideoMode (1600, 800), "Black Jack!");

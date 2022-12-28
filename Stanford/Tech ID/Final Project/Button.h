@@ -1,13 +1,12 @@
 #pragma once
-#include "EndConditions.h"
+#include "Hand.cpp"
 
-//#include <iostream>
-//#include <SFML/Graphics.hpp>
+#include <iostream>
+#include <SFML/Graphics.hpp>
 
 class Button {
 public:
 	Button() { }
-
 	Button(std::string t, sf::Vector2f size, int charSize, sf::Color bgColour, sf::Color textColour) {
 		text.setString(t);
 		text.setColor(textColour);
@@ -17,7 +16,7 @@ public:
 		button.setFillColor(bgColour);
 
 	}
-	void setFont(sf::Font& font) {
+	void Font(sf::Font& font) {
 		text.setFont(font);
 	}
 	void BackColour(sf::Color colour) {
@@ -30,7 +29,7 @@ public:
 		button.setPosition(pos);
 
 		float X = (pos.x + button.getLocalBounds().width / 2) - (text.getLocalBounds().width / 2);
-		float Y = (pos.y + button.getLocalBounds().height / 2) - (text.getLocalBounds().height / 2);
+		float Y = (pos.y + button.getLocalBounds().height / 4) - (text.getLocalBounds().height / 2);
 		text.setPosition({ X, Y });
 	}
 	void drawTo(sf::RenderWindow& window) {
