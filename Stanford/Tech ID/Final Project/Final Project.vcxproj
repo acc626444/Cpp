@@ -23,7 +23,11 @@
     <ClInclude Include="Deck.h" />
     <ClInclude Include="EndConditions.h" />
     <ClInclude Include="Hand.h" />
+    <ClInclude Include="makeButton.h" />
     <ClInclude Include="Players.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
