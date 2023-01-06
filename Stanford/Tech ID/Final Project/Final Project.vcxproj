@@ -19,10 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Card.h" />
-    <ClInclude Include="Deck.h" />
-    <ClInclude Include="EndConditions.h" />
-    <ClInclude Include="Hand.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="makeButton.h" />
     <ClInclude Include="Players.h" />
   </ItemGroup>
