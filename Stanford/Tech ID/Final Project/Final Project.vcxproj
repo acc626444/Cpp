@@ -20,7 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h" />
-    <ClInclude Include="makeButton.h" />
+    <ClInclude Include="EndConditions.h" />
     <ClInclude Include="Players.h" />
   </ItemGroup>
   <ItemGroup>

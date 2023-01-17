@@ -18,10 +18,10 @@
     <ClInclude Include="Players.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="makeButton.h">
+    <ClInclude Include="Button.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Button.h">
+    <ClInclude Include="EndConditions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

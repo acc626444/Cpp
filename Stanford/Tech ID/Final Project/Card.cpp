@@ -18,9 +18,8 @@ string Card::getSuit() {
 
 }
 void Card::printCard(sf::RenderWindow& w, float positionX) {
-		switch (getValue()) {
-			//if Jack, print Jack of 'suit'
-		case 11:
+		//if Jack, print Jack of 'suit'
+		if (getValue() == 11) {
 			if (suit == "Club") {
 				txture.loadFromFile("Deck/Club/Club_J.png");
 				card.setTexture(txture);
@@ -49,8 +48,9 @@ void Card::printCard(sf::RenderWindow& w, float positionX) {
 				card.setPosition(236 * positionX, 325);
 				//w.draw(card);
 			}
-			//if Queen, print Queen of 'suit'
-		case 12:
+		}
+		//if Queen, print Queen of 'suit'
+		if (getValue() == 12) {
 			if (suit == "Club") {
 				txture.loadFromFile("Deck/Club/Club_Q.png");
 				card.setTexture(txture);
@@ -79,8 +79,9 @@ void Card::printCard(sf::RenderWindow& w, float positionX) {
 				card.setPosition(250 * positionX, 325);
 				//w.draw(card);
 			}
-			//if King, print King of 'suit'
-		case 13:
+		}
+		//if King, print King of 'suit'
+		if (getValue() == 13) {
 			if (suit == "Club") {
 				txture.loadFromFile("Deck/Club/Club_K.png");
 				card.setTexture(txture);
@@ -109,8 +110,9 @@ void Card::printCard(sf::RenderWindow& w, float positionX) {
 				card.setPosition(250 * positionX, 325);
 				//w.draw(card);
 			}
-			//if Ace, print Ace of 'suit'
-		case 1:
+		}
+		//if Ace, print Ace of 'suit'
+		if (getValue() == 1) {
 			if (suit == "Club") {
 				txture.loadFromFile("Deck/Club/Club_A.png");
 				card.setTexture(txture);
@@ -139,8 +141,9 @@ void Card::printCard(sf::RenderWindow& w, float positionX) {
 				card.setPosition(250 * positionX, 325);
 				//w.draw(card);
 			}
-			//print 'card#' and 'suit'
-		case 2:
+		}
+		//print 'card#' and 'suit'
+		if (getValue() == 2) {
 			if (suit == "Club") {
 				txture.loadFromFile("Deck/Club/Club_2.png");
 				card.setTexture(txture);
@@ -169,7 +172,8 @@ void Card::printCard(sf::RenderWindow& w, float positionX) {
 				card.setPosition(250 * positionX, 325);
 				//w.draw(card);
 			}
-		case 3:
+		}
+		if (getValue() == 3) {
 			if (suit == "Club") {
 				txture.loadFromFile("Deck/Club/Club_3.png");
 				card.setTexture(txture);
@@ -198,7 +202,8 @@ void Card::printCard(sf::RenderWindow& w, float positionX) {
 				card.setPosition(250 * positionX, 325);
 				//w.draw(card);
 			}
-		case 4:
+		}
+		if (getValue() == 4) {
 			if (suit == "Club") {
 				txture.loadFromFile("Deck/Club/Club_4.png");
 				card.setTexture(txture);
@@ -226,7 +231,9 @@ void Card::printCard(sf::RenderWindow& w, float positionX) {
 				card.setScale(0.25, 0.25);
 				card.setPosition(250 * positionX, 325);
 				//w.draw(card);
-		case 5:
+			}
+		}
+		if (getValue() == 5) {
 			if (suit == "Club") {
 				txture.loadFromFile("Deck/Club/Club_5.png");
 				card.setTexture(txture);
@@ -255,7 +262,8 @@ void Card::printCard(sf::RenderWindow& w, float positionX) {
 				card.setPosition(250 * positionX, 325);
 				//w.draw(card);
 			}
-		case 6:
+		}
+		if (getValue() == 6) {
 			if (suit == "Club") {
 				txture.loadFromFile("Deck/Club/Club_6.png");
 				card.setTexture(txture);
@@ -284,8 +292,8 @@ void Card::printCard(sf::RenderWindow& w, float positionX) {
 				card.setPosition(250 * positionX, 325);
 				//w.draw(card);
 			}
-			}
-		case 7:
+		}
+		if (getValue() == 7) {
 			if (suit == "Club") {
 				txture.loadFromFile("Deck/Club/Club_7.png");
 				card.setTexture(txture);
@@ -314,7 +322,8 @@ void Card::printCard(sf::RenderWindow& w, float positionX) {
 				card.setPosition(250 * positionX, 325);
 				//w.draw(card);
 			}
-		case 8:
+		}
+		if (getValue() == 8) {
 			if (suit == "Club") {
 				txture.loadFromFile("Deck/Club/Club_8.png");
 				card.setTexture(txture);
@@ -343,7 +352,8 @@ void Card::printCard(sf::RenderWindow& w, float positionX) {
 				card.setPosition(250 * positionX, 325);
 				//w.draw(card);
 			}
-		case 9:
+		}
+		if (getValue() == 9) {
 			if (suit == "Club") {
 				txture.loadFromFile("Deck/Club/Club_9.png");
 				card.setTexture(txture);
@@ -372,7 +382,8 @@ void Card::printCard(sf::RenderWindow& w, float positionX) {
 				card.setPosition(250 * positionX, 325);
 				//w.draw(card);
 			}
-		case 10:
+		}
+		if (getValue() == 10) {
 			if (suit == "Club") {
 				txture.loadFromFile("Deck/Club/Club_10.png");
 				card.setTexture(txture);
@@ -402,6 +413,5 @@ void Card::printCard(sf::RenderWindow& w, float positionX) {
 				//w.draw(card);
 			}
 		}
-
 	w.draw(card);
 }
