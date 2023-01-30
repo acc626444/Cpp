@@ -33,41 +33,37 @@ void  EndCondition(Hand p1, Hand p2, sf::RenderWindow& w) {
 	tie.Font(font);
 	tie.position({ 300, 120 });
 
-	//Player 1 wins
-	if (p1.handValue() <= 21 && p2.handValue() > 21) {
-		/*player.setString("Player 1 wins!!");
-		w.draw(player);
-		w.display();*/
+	/*				
+											Dealer wins
+
+
+
+	Dealer busts										Player has more than the dealer
+														given that the player has a max of 21      */
+	if ((p1.handValue() <= 21 && p2.handValue() > 21)||(p1.handValue() <= 21 && p1.handValue() > p2.handValue())) {
 		w.draw(player);
 		win.drawTo(w);
 		w.display();
 		sf::sleep(sf::seconds(2));
 	}
-	//Player 2 wins
-	else if ((p2.handValue() > p1.handValue() && p2.handValue()<=21)) {
-		/*player.setString("Dealer wins!!");
-		w.draw(player);
-		w.display();*/
+	/*
+										Player wins
+
+		Player busts										dealer has more than the player
+															given that the player has a max of 21      */
+	else if ((p2.handValue() <= 21 && p1.handValue() > 21) || (p2.handValue() <= 21 && p2.handValue() > p1.handValue())) {
 		w.draw(Dealer);
 		lose.drawTo(w);
 		w.display();
 		sf::sleep(sf::seconds(2));
 	}
-	//Player 1 Wins
-	else if (p1.handValue()<=21 && p1.handValue() > p2.handValue()) {
-		/*player.setString("Player 1 wins!!");
-		w.draw(player);
-		w.display();*/
-		w.draw(player);
-		win.drawTo(w);
+	//Tie
+	else if (p1.handValue() == 21 && p2.handValue() == 21) {
+		tie.drawTo(w);
 		w.display();
 		sf::sleep(sf::seconds(2));
 	}
-	//Tie
 	else {
-		//player.setString("Tie");
-		//w.draw(player);
-		//w.display();
 		tie.drawTo(w);
 		w.display();
 		sf::sleep(sf::seconds(2));

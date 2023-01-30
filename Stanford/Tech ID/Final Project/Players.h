@@ -107,8 +107,7 @@ void dealer1(Hand dealer, sf::RenderWindow& w) {
 				lose.drawTo(w);
 				dealer.printHand(w);
 				w.display();
-				//sf::sleep(sf::milliseconds(500));
-				cout << "yo" << endl;
+				sf::sleep(sf::milliseconds(900));
 				w.clear();
 				start2 = false;
 			}
@@ -122,7 +121,7 @@ void dealer1(Hand dealer, sf::RenderWindow& w) {
 				win.drawTo(w);
 				dealer.printHand(w);
 				w.display();
-				sf::sleep(sf::seconds(2));
+				sf::sleep(sf::seconds(900));
 				w.clear();
 				start2 = false;
 			}
