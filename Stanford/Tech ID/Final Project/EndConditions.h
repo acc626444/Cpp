@@ -57,8 +57,12 @@ void  EndCondition(Hand p1, Hand p2, sf::RenderWindow& w) {
 		w.display();
 		sf::sleep(sf::seconds(2));
 	}
-	//Tie
-	else if (p1.handValue() == 21 && p2.handValue() == 21) {
+	/*
+										No one wins
+
+		Both get 21										dealer has more than the player
+															given that the player has a max of 21      */
+	else if (p1.handValue() == 21 && p2.handValue() == 21||p1.handValue()>21&&p2.handValue()>21) {
 		tie.drawTo(w);
 		w.display();
 		sf::sleep(sf::seconds(2));
