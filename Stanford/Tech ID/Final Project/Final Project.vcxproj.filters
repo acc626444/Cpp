@@ -24,6 +24,9 @@
     <ClInclude Include="EndConditions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Again.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
