@@ -4,7 +4,7 @@ sf::Text player;
 sf::Text Dealer;
 sf::Font font;
 
-int player1(Hand p1, sf::RenderWindow& w) {
+void player1(Hand &p1, sf::RenderWindow& w) {
 	bool start = true;
 	sf::Event event;
 	font.loadFromFile("japanese-style-font/JapaneseStyle-rmX7.ttf");
@@ -36,7 +36,7 @@ int player1(Hand p1, sf::RenderWindow& w) {
 					p1.Draw();
 				}
 				if (stay.mouseOver(w) && sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
-					w.clear();
+					//w.clear();
 					start = false;
 				}
 				//lost
@@ -52,7 +52,6 @@ int player1(Hand p1, sf::RenderWindow& w) {
 					sf::sleep(sf::seconds(2));
 					w.clear();
 					start = false;
-
 				}
 				//win
 				if (p1.handValue() == 21) {
@@ -80,8 +79,7 @@ int player1(Hand p1, sf::RenderWindow& w) {
 	w.clear();
 }
 
-void dealer1(Hand dealer, sf::RenderWindow& w) {
-	bool start2 = true;
+void dealer1(Hand &dealer, sf::RenderWindow& w) {
 	sf::Event event2;
 	font.loadFromFile("japanese-style-font/JapaneseStyle-rmX7.ttf");
 	Dealer.setFont(font);
@@ -91,7 +89,7 @@ void dealer1(Hand dealer, sf::RenderWindow& w) {
 	Dealer.setFillColor(sf::Color::Yellow);
 	w.draw(Dealer);
 	w.display();
-	while (start2 && dealer.handValue() < 21) {
+	while (dealer.handValue() < 21) {
 		while (w.pollEvent(event2)) {
 			if (event2.type == sf::Event::Closed) {
 				w.close();
@@ -107,9 +105,8 @@ void dealer1(Hand dealer, sf::RenderWindow& w) {
 				lose.drawTo(w);
 				dealer.printHand(w);
 				w.display();
-				sf::sleep(sf::milliseconds(900));
+				sf::sleep(sf::milliseconds(500));
 				w.clear();
-				start2 = false;
 			}
 			//win
 			else if (dealer.handValue() == 21) {
@@ -121,9 +118,8 @@ void dealer1(Hand dealer, sf::RenderWindow& w) {
 				win.drawTo(w);
 				dealer.printHand(w);
 				w.display();
-				sf::sleep(sf::seconds(900));
+				sf::sleep(sf::milliseconds(500));
 				w.clear();
-				start2 = false;
 			}
 			else {
 				w.clear();

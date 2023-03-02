@@ -1,5 +1,5 @@
 #pragma once
-#include "Card.cpp"
+#include "Chips.cpp"
 class Deck{
 	private:
 	Card cards[52];

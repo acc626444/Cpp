@@ -11,5 +11,7 @@ class Hand{
 	void Draw ();
 	int handValue ();
 
+	vector <Card> restValue();
+
 };
 

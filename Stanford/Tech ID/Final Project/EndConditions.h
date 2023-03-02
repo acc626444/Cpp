@@ -1,7 +1,7 @@
 #pragma once
 #include "Players.h"
 
-void  EndCondition(Hand p1, Hand p2, sf::RenderWindow& w) {
+void  EndCondition(Hand &p1, Hand &p2, sf::RenderWindow& w) {
 	font.loadFromFile("japanese-style-font/JapaneseStyle-rmX7.ttf");
 	player.setFont(font);
 	player.setString("Player 1");

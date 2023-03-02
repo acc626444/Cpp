@@ -24,8 +24,8 @@
 * ex.									  |								  |
 *										  |								  |
 *		inHand.operator[]				  |			for every card printed|
-*	(playcards).printCard();			  |				and the to hand	  |
-*										  |			   in index of place  |
+*	(playcards).printCard();			  |				 to the hand	  |
+*										  |			   in index of player |
 *										  |								  |
 **************************************************************************/
 
@@ -37,7 +37,7 @@ Hand::Hand (Deck* d){
 void Hand::printHand (sf::RenderWindow& w){
 	for(int place = 0; place < inHand.size (); place++){
 		inHand.operator[](place).printCard (w, place);
-		
+		//w.display();
 	}
 }
 
@@ -78,3 +78,9 @@ int Hand::handValue (){
 	}
 	return points;
 }
+
+vector <Card> Hand :: restValue() {
+	inHand.clear();
+	return inHand;
+ }
+//vector <Card> Hand :: whole
