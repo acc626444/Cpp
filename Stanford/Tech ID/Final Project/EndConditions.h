@@ -65,11 +65,11 @@ void  EndCondition(Hand &p1, Hand &p2, sf::RenderWindow& w) {
 	else if (p1.handValue() == 21 && p2.handValue() == 21||p1.handValue()>21&&p2.handValue()>21) {
 		tie.drawTo(w);
 		w.display();
-		sf::sleep(sf::seconds(2));
+		sf::sleep(sf::seconds(1));
 	}
 	else {
 		tie.drawTo(w);
 		w.display();
-		sf::sleep(sf::seconds(2));
+		sf::sleep(sf::seconds(1));
 	}
 }

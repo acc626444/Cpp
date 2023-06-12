@@ -21,17 +21,11 @@
   <ItemGroup>
     <ClInclude Include="Again.h" />
     <ClInclude Include="Button.h" />
-    <ClInclude Include="Card.h" />
-    <ClInclude Include="Chips.h" />
-    <ClInclude Include="Deck.h" />
     <ClInclude Include="EndConditions.h" />
-    <ClInclude Include="Hand.h" />
+    <ClInclude Include="Home.h" />
     <ClInclude Include="Players.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Card.cpp" />
-    <ClCompile Include="Chips.cpp" />
-    <ClCompile Include="Deck.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

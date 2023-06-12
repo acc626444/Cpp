@@ -27,31 +27,13 @@
     <ClInclude Include="Again.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Chips.h">
-      <Filter>Resource Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Deck.h">
-      <Filter>Resource Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Card.h">
-      <Filter>Resource Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Hand.h">
-      <Filter>Resource Files</Filter>
+    <ClInclude Include="Home.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Chips.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Deck.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Card.cpp">
-      <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

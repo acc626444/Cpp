@@ -7,8 +7,8 @@ private:
 	sf::Texture txture;
 	sf::Sprite chip;
 public:
-	Chip(int v, string c);
-	Chip();
+	Chips(int v, string c);
+	Chips();
 	int getValue();
 	string getColour();
 	void printChips(sf::RenderWindow &w, float positionX);

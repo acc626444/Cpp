@@ -1,7 +1,7 @@
 #pragma once
 #include "EndConditions.h"
 
-bool continu(Hand &p1, Hand &p2, sf::RenderWindow& w, bool &game) {
+bool continu(Hand& p1, Hand& p2, sf::RenderWindow& w, bool& game) {
 	sf::Text question;
 	sf::Event event3;
 	font.loadFromFile("japanese-style-font/JapaneseStyle-rmX7.ttf");
@@ -20,12 +20,34 @@ bool continu(Hand &p1, Hand &p2, sf::RenderWindow& w, bool &game) {
 	no.Font(font);
 	no.TextColour(sf::Color::White);
 	no.position({ 1450, 740 });
-	while (game == false&&!(p1.handValue()==0)&&!(p2.handValue()==0)) {
+	while (game == false && !(p1.handValue() == 0) && !(p2.handValue() == 0)) {
 		while (w.pollEvent(event3)) {
 			switch (event3.type) {
 			case sf::Event::Closed:
 				w.close();
 				exit(0);
+			case sf::Event::MouseMoved:
+				if (yes.mouseOver(w)) {
+					sf::sleep(sf::milliseconds(2));
+					yes.BackColour(sf::Color::Blue);
+					yes.TextColour(sf::Color::Yellow);
+				}
+				if (no.mouseOver(w)) {
+					sf::sleep(sf::milliseconds(2));
+					no.BackColour(sf::Color::Blue);
+					no.TextColour(sf::Color::Yellow);
+				}
+				if (!(yes.mouseOver(w))) {
+					sf::sleep(sf::milliseconds(2));
+					yes.BackColour(sf::Color::Red);
+					yes.TextColour(sf::Color::White);
+				}
+				if (!(no.mouseOver(w))) {
+					sf::sleep(sf::milliseconds(2));
+					no.BackColour(sf::Color::Red);
+					no.TextColour(sf::Color::White);
+
+				}
 			case sf::Event::MouseButtonPressed:
 				if (yes.mouseOver(w) && sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
 					p1.restValue();
@@ -45,8 +67,6 @@ bool continu(Hand &p1, Hand &p2, sf::RenderWindow& w, bool &game) {
 			yes.drawTo(w);
 			no.drawTo(w);
 			w.display();
-			//return game;
 		}
 	}
-	////w.clear();
 }
