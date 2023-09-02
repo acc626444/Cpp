@@ -1,7 +1,7 @@
 #pragma once
 #include "Players.h"
 
-void  EndCondition(Hand &p1, Hand &p2, sf::RenderWindow& w) {
+void  EndCondition(Hand& p1, Hand& p2, sf::RenderWindow& w) {
 	font.loadFromFile("japanese-style-font/JapaneseStyle-rmX7.ttf");
 	player.setFont(font);
 	player.setString("Player 1");
@@ -33,21 +33,21 @@ void  EndCondition(Hand &p1, Hand &p2, sf::RenderWindow& w) {
 	tie.Font(font);
 	tie.position({ 300, 120 });
 
-	/*				
-											Dealer wins
+	/*
+											Player wins
 
 
 
 	Dealer busts										Player has more than the dealer
 														given that the player has a max of 21      */
-	if ((p1.handValue() <= 21 && p2.handValue() > 21)||(p1.handValue() <= 21 && p1.handValue() > p2.handValue())) {
+	if ((p1.handValue() <= 21 && p2.handValue() > 21) || (p1.handValue() <= 21 && p1.handValue() > p2.handValue())) {
 		w.draw(player);
 		win.drawTo(w);
 		w.display();
 		sf::sleep(sf::seconds(2));
 	}
 	/*
-										Player wins
+										Dealer wins
 
 		Player busts										dealer has more than the player
 															given that the player has a max of 21      */
@@ -62,7 +62,7 @@ void  EndCondition(Hand &p1, Hand &p2, sf::RenderWindow& w) {
 
 		Both get 21										dealer has more than the player
 															given that the player has a max of 21      */
-	else if (p1.handValue() == 21 && p2.handValue() == 21||p1.handValue()>21&&p2.handValue()>21) {
+	else if (p1.handValue() == 21 && p2.handValue() == 21 || p1.handValue() > 21 && p2.handValue() > 21||p1.handValue() == p2.handValue() ) {
 		tie.drawTo(w);
 		w.display();
 		sf::sleep(sf::seconds(1));

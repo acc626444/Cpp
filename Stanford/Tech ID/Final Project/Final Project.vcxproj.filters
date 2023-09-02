@@ -18,16 +18,7 @@
     <ClInclude Include="Players.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Button.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="EndConditions.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Again.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Home.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

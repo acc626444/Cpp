@@ -1,8 +1,7 @@
 #pragma once
-#include "Hand.cpp"
+#include "Textbox.h"
 
-#include <iostream>
-#include <SFML/Graphics.hpp>
+
 
 class Button {
 public:

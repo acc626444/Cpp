@@ -16,16 +16,21 @@ void player1(Hand& p1, sf::RenderWindow& w) {
 	player.setFillColor(pinkish);
 	w.draw(player);
 	w.display();
-	Button hit("Hit", { 150,59 }, 60, sf::Color::Red, sf::Color::White);
+	Button hit("Hit", { 150,60 }, 60, sf::Color::Red, sf::Color::White);
 	font.loadFromFile("japanese-style-font/JapaneseStyle-rmX7.ttf");
 	hit.Font(font);
 	hit.position({ 0, 740 });
 	Button stay("Stay", { 150, 60 }, 60, sf::Color::Red, sf::Color::Red);
-	font.loadFromFile("japanese-style-font/JapaneseStyle-rmX7.ttf");
 	stay.Font(font);
-	stay.TextColour(sf::Color::White);
 	stay.position({ 1450, 740 });
-	while (start && p1.handValue() < 21) {
+	Button count("Card Value:", { 150, 40 }, 40, sf::Color::Transparent, sf::Color::Yellow);
+	count.Font(font);
+	count.position({ 30, 200 });
+	while (start) {
+		string s = to_string(p1.handValue());
+		Button value(s, { 150, 40 }, 40, sf::Color::Transparent, sf::Color::Yellow);
+		value.Font(font);
+		value.position({ 160, 200 });
 		while (w.pollEvent(event)) {
 			switch (event.type) {
 			case sf::Event::Closed:
@@ -71,6 +76,8 @@ void player1(Hand& p1, sf::RenderWindow& w) {
 					lose.position({ 300, 120 });
 					//w.draw(player);
 					lose.drawTo(w);
+					count.drawTo(w);
+					value.drawTo(w);
 					p1.printHand(w);
 					w.display();
 					sf::sleep(sf::milliseconds(500));
@@ -97,14 +104,27 @@ void player1(Hand& p1, sf::RenderWindow& w) {
 			w.clear();
 			hit.drawTo(w);
 			stay.drawTo(w);
+			count.drawTo(w);
+			value.drawTo(w);
 			p1.printHand(w);
 			w.draw(player);
 			w.display();
 		}
 	}
-	w.clear();
+	if (p1.handValue() > 21) {
+		string s = to_string(p1.handValue());
+		Button value(s, { 150, 40 }, 40, sf::Color::Transparent, sf::Color::Yellow);
+		value.Font(font);
+		value.position({ 160, 200 });
+		w.clear();
+		w.draw(player);
+		count.drawTo(w);
+		value.drawTo(w);
+		p1.printHand(w);
+		w.display();
+		sf::sleep(sf::milliseconds(900));
+	}
 }
-
 void dealer1(Hand& dealer, sf::RenderWindow& w) {
 	sf::Event event2;
 	font.loadFromFile("japanese-style-font/JapaneseStyle-rmX7.ttf");
@@ -115,21 +135,29 @@ void dealer1(Hand& dealer, sf::RenderWindow& w) {
 	Dealer.setFillColor(sf::Color::Yellow);
 	w.draw(Dealer);
 	w.display();
+	Button count("Card Value:", { 150, 40 }, 40, sf::Color::Transparent, sf::Color::Yellow);
+	count.Font(font);
+	count.position({ 30, 200 });
 	bool u = true;
-	while (dealer.handValue() < 21 && u == true) {
-		while (w.pollEvent(event2)) {
+	while (dealer.handValue() <= 21 && u) {
+		string s = to_string(dealer.handValue());
+		Button value(s, { 150, 40 }, 40, sf::Color::Transparent, sf::Color::Yellow);
+		value.Font(font);
+		value.position({ 160, 200 });
+		if (w.pollEvent(event2)) {
 			if (event2.type == sf::Event::Closed) {
 				w.close();
 				exit(0);
 			}
 			//lost
 			if (dealer.handValue() > 21) {
+				w.draw(Dealer);
 				font.loadFromFile("japanese-style-font/JapaneseStyle-rmX7.ttf");
 				Button lose("BUSTED!!!", { 800, 200 }, 200, sf::Color::White, sf::Color::Red);
 				lose.Font(font);
 				lose.position({ 300, 120 });
-				//w.draw(Dealer);
-				lose.drawTo(w);
+				count.drawTo(w);
+				value.drawTo(w);
 				dealer.printHand(w);
 				w.display();
 				sf::sleep(sf::milliseconds(900));
@@ -139,12 +167,14 @@ void dealer1(Hand& dealer, sf::RenderWindow& w) {
 			}
 			//win
 			else if (dealer.handValue() == 21) {
+				w.draw(Dealer);
 				font.loadFromFile("japanese-style-font/JapaneseStyle-rmX7.ttf");
 				Button win("BLACK JACK!!!", { 800, 200 }, 150, sf::Color::White, sf::Color::Green);
 				win.Font(font);
 				win.position({ 300, 120 });
-				//w.draw(Dealer);
 				win.drawTo(w);
+				count.drawTo(w);
+				value.drawTo(w);
 				dealer.printHand(w);
 				w.display();
 				sf::sleep(sf::milliseconds(900));
@@ -152,27 +182,39 @@ void dealer1(Hand& dealer, sf::RenderWindow& w) {
 				u = false;
 				break;
 			}
-			else if (dealer.handValue() >= 17 && dealer.handValue()<21) {
+			else if (dealer.handValue() >= 17 && dealer.handValue() < 21) {
 				w.clear();
+				w.draw(Dealer);
+				count.drawTo(w);
+				value.drawTo(w);
 				dealer.printHand(w);
-				//w.draw(Dealer);
 				w.display();
-				dealer.Draw();
-				sf::sleep(sf::milliseconds(200));
+				sf::sleep(sf::milliseconds(900));
 				w.clear();
 				u = false;
 				break;
 			}
 			else {
 				w.clear();
+				w.draw(Dealer);
+				count.drawTo(w);
+				value.drawTo(w);
 				dealer.printHand(w);
-				//w.draw(Dealer);
 				w.display();
 				dealer.Draw();
-				sf::sleep(sf::milliseconds(200));
-				//break;
+				sf::sleep(sf::milliseconds(900));
 			}
 		}
 	}
-	//w.clear();
+	string s = to_string(dealer.handValue());
+	Button value(s, { 150, 40 }, 40, sf::Color::Transparent, sf::Color::Yellow);
+	value.Font(font);
+	value.position({ 160, 200 });
+	w.clear();
+	w.draw(Dealer);
+	count.drawTo(w);
+	value.drawTo(w);
+	dealer.printHand(w);
+	w.display();
+	sf::sleep(sf::milliseconds(900));
 }

@@ -33,31 +33,34 @@ void home(sf::RenderWindow& w) {
 	buttonFont.loadFromFile("japanese-style-font/JapaneseStyle-rmX7.ttf");
 	Play.Font(buttonFont);
 	Play.position({ 725, 270 });
-	while(true) {
+	while (true) {
 		while (w.pollEvent(event)) {
 			switch (event.type) {
 			case sf::Event::Closed:
 				w.close();
 				exit(0);
-			case sf::Event::MouseMoved:
-				if (Play.mouseOver(w)) {
-					sf::sleep(sf::milliseconds(2));
-					Play.TextColour(sf::Color::Green);
-				}
-				if (!(Play.mouseOver(w))) {
-					sf::sleep(sf::milliseconds(2));
-					Play.TextColour(pinkish);
-				}
-			case sf::Event::MouseButtonPressed:
-				if (Play.mouseOver(w) && sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
-					PlayButton(w);
-				}
+
+				case sf::Event::MouseMoved:
+					if (Play.mouseOver(w)) {
+						sf::sleep(sf::milliseconds(2));
+						Play.TextColour(sf::Color::Green);
+					}
+					if (!(Play.mouseOver(w))) {
+						sf::sleep(sf::milliseconds(2));
+						Play.TextColour(pinkish);
+					}
+				case sf::Event::MouseButtonPressed:
+					if (Play.mouseOver(w) && sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
+						PlayButton(w);
+					}
 			}
-			w.clear(sf::Color::Red);
-			Play.drawTo(w);
-			w.draw(Home);
-			w.display();
-		}
+			
+		w.clear();
+		w.clear(sf::Color::Red);
+		w.draw(Home);
+		Play.drawTo(w);
+		w.display();
+	}
 	}
 }
 

@@ -19,10 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Again.h" />
-    <ClInclude Include="Button.h" />
     <ClInclude Include="EndConditions.h" />
-    <ClInclude Include="Home.h" />
     <ClInclude Include="Players.h" />
   </ItemGroup>
   <ItemGroup>
